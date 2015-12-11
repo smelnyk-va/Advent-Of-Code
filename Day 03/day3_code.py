@@ -21,49 +21,66 @@ def calculate_num_houses_receiving_presents(instructions):
 
     print "Current instructions are: " + str(instructions)
 
-    # Maybe do something like the following
-    # starting_position = 0
-    # make a variable for each direction
-    # increment or decrement based on directions going?
-    # (west and south = -1, east and north = +1)
-    # then have a check to make sure we didn't make it back to zero?
-
-    unique_gifts_given = 1
+    #TODO Use tuple to move through houses
+    current_position = (0,0)  # Used to track whether we've been to a house already or not
+    unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
     total_gifts_given = 1  # starts at 1 since he gives a present to his starting location
     visited_house_before = False
 
     for direction in instructions:
 
-        if direction == '<':
-            if not visited_house_before:
-                unique_gifts_given += 1
-                total_gifts_given += 1
-                visited_house_before = True
-            else:
-                total_gifts_given += 1
+        if direction == '^':
+            current_position += 1
+            print "Current current_position (^) is: " + str(current_position)
 
-        elif direction == '>':
-            if not visited_house_before:
-                unique_gifts_given += 1
-                total_gifts_given += 1
+            if current_position == 0:  # aka back to a house we've been to?
                 visited_house_before = True
-            else:
-                total_gifts_given += 1
 
-        elif direction == '^':
             if not visited_house_before:
-                unique_gifts_given += 1
+                unique_houses_visited += 1
                 total_gifts_given += 1
-                visited_house_before = True
             else:
                 total_gifts_given += 1
 
         elif direction == 'v':
-            if not visited_house_before:
-                unique_gifts_given += 1
-                total_gifts_given += 1
+            current_position -= 1
+            print "Current current_position (v) is: " + str(current_position)
+
+            if current_position == 0:  # aka back to a house we've been to?
                 visited_house_before = True
+
+            if not visited_house_before:
+                unique_houses_visited += 1
+                total_gifts_given += 1
             else:
                 total_gifts_given += 1
 
-    return total_gifts_given
+        elif direction == '>':
+            current_position += 1
+            print "Current current_position (>) is: " + str(current_position)
+
+            if current_position == 0:  # aka back to a house we've been to?
+                visited_house_before = True
+
+            if not visited_house_before:
+                unique_houses_visited += 1
+                total_gifts_given += 1
+            else:
+                total_gifts_given += 1
+
+        elif direction == '<':
+            current_position -= 1
+            print "Current current_position (<) is: " + str(current_position)
+
+            if current_position == 0:  # aka back to a house we've been to?
+                visited_house_before = True
+
+            if not visited_house_before:
+                unique_houses_visited += 1
+                total_gifts_given += 1
+            else:
+                total_gifts_given += 1
+
+    print "unique_houses_visited is: " + str(unique_houses_visited)
+    print "total_gifts_given is: " + str(total_gifts_given)
+    return unique_houses_visited
