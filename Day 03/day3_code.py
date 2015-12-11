@@ -1,7 +1,7 @@
 __author__ = 'smelnyk'
 
 
-def calculate_num_houses_receiving_presents(directions):
+def calculate_num_houses_receiving_presents(instructions):
     """
     Santa is delivering presents to an infinite two-dimensional grid of
     houses. Starting location - north pole.
@@ -19,30 +19,51 @@ def calculate_num_houses_receiving_presents(directions):
     How many houses receive at least one present?
     """
 
-    print "Current directions are: " + str(directions)
+    print "Current instructions are: " + str(instructions)
 
-    num_moves_west = 0
-    num_moves_east = 0
-    num_moves_south = 0
-    num_moves_north = 0
-    total_moves = 0
-    gifts_given = 1 # starts at 1 since he gives a present to his starting location
+    # Maybe do something like the following
+    # starting_position = 0
+    # make a variable for each direction
+    # increment or decrement based on directions going?
+    # (west and south = -1, east and north = +1)
+    # then have a check to make sure we didn't make it back to zero?
 
-    if directions == '<':
-        num_moves_west = 1
-        total_moves = 1
+    unique_gifts_given = 1
+    total_gifts_given = 1  # starts at 1 since he gives a present to his starting location
+    visited_house_before = False
 
+    for direction in instructions:
 
-    elif directions == '>':
-        num_moves_east = 1
-        total_moves = 1
+        if direction == '<':
+            if not visited_house_before:
+                unique_gifts_given += 1
+                total_gifts_given += 1
+                visited_house_before = True
+            else:
+                total_gifts_given += 1
 
-    elif directions == '^':
-        num_moves_north = 1
-        total_moves = 1
+        elif direction == '>':
+            if not visited_house_before:
+                unique_gifts_given += 1
+                total_gifts_given += 1
+                visited_house_before = True
+            else:
+                total_gifts_given += 1
 
-    elif directions == 'v':
-        num_moves_south = 1
-        total_moves = 1
+        elif direction == '^':
+            if not visited_house_before:
+                unique_gifts_given += 1
+                total_gifts_given += 1
+                visited_house_before = True
+            else:
+                total_gifts_given += 1
 
-    return total_moves
+        elif direction == 'v':
+            if not visited_house_before:
+                unique_gifts_given += 1
+                total_gifts_given += 1
+                visited_house_before = True
+            else:
+                total_gifts_given += 1
+
+    return total_gifts_given
