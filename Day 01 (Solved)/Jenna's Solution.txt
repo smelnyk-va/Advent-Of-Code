@@ -1,0 +1,6 @@
+She did it in one line of code:
+
+total = sum([(1 if c == "(" else -1) for c in input_string])
+
+I can also view her solution here:
+https://codenvy.com/ws/jenna.fingler/Advent-of-Code
