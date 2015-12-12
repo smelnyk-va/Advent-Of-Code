@@ -1,7 +1,5 @@
 __author__ = 'smelnyk'
 
-from itertools import chain
-
 
 def calculate_num_houses_receiving_presents(instructions):
     """
@@ -20,11 +18,10 @@ def calculate_num_houses_receiving_presents(instructions):
 
     How many houses receive at least one present?
     """
+    print "Current instructions are: " + str(instructions)  # Print current instructions passed in
 
-    print "Current instructions are: " + str(instructions)
-
-    #TODO Use tuple to move through houses
     current_position = (0,0)  # Used to track whether we've been to a house already or not
+
     x_position = 0
     y_position = 0
 
@@ -32,8 +29,6 @@ def calculate_num_houses_receiving_presents(instructions):
 
     unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
     total_houses_visited = 1  # starts at 1 since he gives a present to his starting location
-    visited_house_before = False
-
 
     for direction in instructions:
 
@@ -50,8 +45,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # Need to check whether the house coord is already in the full list
             # if not, add to unique houses as well as total gifts
 
-            # if any(current_house_coordinates in all_places_visited for position in current_position):
-            # if current_house_coordinates not in chain.from_iterable(all_places_visited):
             if current_house_coordinates not in all_places_visited:
                 # print "current_house_coordinates (any): " + str(current_house_coordinates)
                 unique_houses_visited += 1
@@ -59,16 +52,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # else add to total houses list only
             else:
                 total_houses_visited += 1
-
-
-            # if current_position == 0:  # aka back to a house we've been to?
-            #     visited_house_before = True
-            #
-            # if not visited_house_before:
-            #     unique_houses_visited += 1
-            #     total_houses_visited += 1
-            # else:
-            #     total_houses_visited += 1
 
         elif direction == 'v':
             x_position -= 1
@@ -83,8 +66,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # Need to check whether the house coord is already in the full list
             # if not, add to unique houses as well as total gifts
 
-            # if any(current_house_coordinates in all_places_visited for position in current_position):
-            # if current_house_coordinates not in chain.from_iterable(all_places_visited):
             if current_house_coordinates not in all_places_visited:
                 # print "current_house_coordinates (any): " + str(current_house_coordinates)
                 unique_houses_visited += 1
@@ -92,16 +73,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # else add to total houses list only
             else:
                 total_houses_visited += 1
-
-
-            # if current_position == 0:  # aka back to a house we've been to?
-            #     visited_house_before = True
-            #
-            # if not visited_house_before:
-            #     unique_houses_visited += 1
-            #     total_houses_visited += 1
-            # else:
-            #     total_houses_visited += 1
 
         elif direction == '>':
             y_position += 1
@@ -116,8 +87,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # Need to check whether the house coord is already in the full list
             # if not, add to unique houses as well as total gifts
 
-            # if any(current_house_coordinates in all_places_visited for position in current_position):
-            # if current_house_coordinates not in chain.from_iterable(all_places_visited):
             if current_house_coordinates not in all_places_visited:
                 # print "current_house_coordinates (any): " + str(current_house_coordinates)
                 unique_houses_visited += 1
@@ -125,15 +94,6 @@ def calculate_num_houses_receiving_presents(instructions):
             # else add to total houses list only
             else:
                 total_houses_visited += 1
-
-            # if current_position == 0:  # aka back to a house we've been to?
-            #     visited_house_before = True
-            #
-            # if not visited_house_before:
-            #     unique_houses_visited += 1
-            #     total_houses_visited += 1
-            # else:
-            #     total_houses_visited += 1
 
         elif direction == '<':
             y_position -= 1
@@ -147,31 +107,12 @@ def calculate_num_houses_receiving_presents(instructions):
 
             # Need to check whether the house coord is already in the full list
             # if not, add to unique houses as well as total gifts
-
-            # if any(current_house_coordinates in all_places_visited for position in current_position):
-            # if current_house_coordinates not in chain.from_iterable(all_places_visited):
             if current_house_coordinates not in all_places_visited:
-                # print "current_house_coordinates (any): " + str(current_house_coordinates)
                 unique_houses_visited += 1
                 total_houses_visited += 1
             # else add to total houses list only
             else:
                 total_houses_visited += 1
-
-
-            # if current_position == 0:  # aka back to a house we've been to?
-            #     visited_house_before = True
-            #
-            # if not visited_house_before:
-            #     unique_houses_visited += 1
-            #     total_houses_visited += 1
-            # else:
-            #     total_houses_visited += 1
-
-        #for place_visited in current_position:
-        #     all_places_visited.append(place_visited)
-        #
-        # print "all_places_visited is: " + str(all_places_visited)
 
     print "unique_houses_visited is: " + str(unique_houses_visited)
     print "total_houses_visited is: " + str(total_houses_visited)
