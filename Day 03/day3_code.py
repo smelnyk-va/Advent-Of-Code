@@ -20,15 +20,15 @@ def calculate_num_houses_receiving_presents(instructions):
     """
     print "Current instructions are: " + str(instructions)  # Print current instructions passed in
 
-    current_position = (0,0)  # Used to track whether we've been to a house already or not
+    current_house_coordinates = (0, 0)  # Used to track whether we've been to a house already or not
 
     x_position = 0
     y_position = 0
 
-    all_places_visited = [(0,0)]
+    all_places_visited = [(0, 0)]
 
-    unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
-    total_houses_visited = 1  # starts at 1 since he gives a present to his starting location
+    unique_houses_visited = 0  # starts at 1 since he gives a present to his starting location
+    total_houses_visited = 0  # starts at 1 since he gives a present to his starting location
 
     for direction in instructions:
 
@@ -45,14 +45,29 @@ def calculate_num_houses_receiving_presents(instructions):
             # Need to check whether the house coord is already in the full list
             # if not, add to unique houses as well as total gifts
 
+            # Right now, the problem with this loop is that it's checking over the list items a
+            # couple times so it's adding more than it should...
+            # Need it check whether it's in the list or not...
+            # Maybe I should try .index()?
+
+            # current_house_index = all_places_visited.index(current_house_coordinates)
+            # print "current_house_index: " + str(current_house_index)
+
+            # if it the index didn't find the current house in the list already
+            # if current_house_index is None:
+            #     total_houses_visited += 1
+            #     unique_houses_visited += 1
+            # else:
+            #     total_houses_visited += 1
+
             for place_visited in all_places_visited:
                 print "place_visited (any): " + str(place_visited)
 
-                if current_house_coordinates != place_visited:
+                if current_house_coordinates not in place_visited:
                     unique_houses_visited += 1
                     total_houses_visited += 1
                 # else add to total houses list only
-                elif current_house_coordinates == place_visited:
+                elif current_house_coordinates in place_visited:
                     total_houses_visited += 1
 
         elif direction == 'v':
@@ -71,12 +86,11 @@ def calculate_num_houses_receiving_presents(instructions):
             for place_visited in all_places_visited:
                 print "place_visited (any): " + str(place_visited)
 
-                if current_house_coordinates != place_visited:
+                if current_house_coordinates not in place_visited:
                     unique_houses_visited += 1
                     total_houses_visited += 1
                 # else add to total houses list only
-
-                elif current_house_coordinates == place_visited:
+                elif current_house_coordinates in place_visited:
                     total_houses_visited += 1
 
         elif direction == '>':
@@ -95,11 +109,11 @@ def calculate_num_houses_receiving_presents(instructions):
             for place_visited in all_places_visited:
                 print "place_visited (any): " + str(place_visited)
 
-                if current_house_coordinates != place_visited:
+                if current_house_coordinates not in place_visited:
                     unique_houses_visited += 1
                     total_houses_visited += 1
                 # else add to total houses list only
-                elif current_house_coordinates == place_visited:
+                elif current_house_coordinates in place_visited:
                     total_houses_visited += 1
 
         elif direction == '<':
@@ -118,12 +132,11 @@ def calculate_num_houses_receiving_presents(instructions):
             for place_visited in all_places_visited:
                 print "place_visited (any): " + str(place_visited)
 
-                if current_house_coordinates != place_visited:
+                if current_house_coordinates not in place_visited:
                     unique_houses_visited += 1
                     total_houses_visited += 1
                 # else add to total houses list only
-
-                elif current_house_coordinates == place_visited:
+                elif current_house_coordinates in place_visited:
                     total_houses_visited += 1
 
     print "unique_houses_visited is: " + str(unique_houses_visited)
