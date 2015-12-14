@@ -83,8 +83,8 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
     # Split out the instructions for each person
     santa_instructions = instructions[::2]
     robo_instructions = instructions[1::2]
-    print "santa_instructions: " + str(santa_instructions)
-    print "robo_instructions: " + str(robo_instructions)
+    # print "santa_instructions: " + str(santa_instructions)
+    # print "robo_instructions: " + str(robo_instructions)
 
     santa_current_house_coordinates = (0, 0)  # Used to track whether we've been to a house already or not, starting at 0,0
     robo_current_house_coordinates = (0, 0)  # Used to track whether we've been to a house already or not, starting at 0,0
@@ -98,29 +98,31 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
     all_places_visited = [(0, 0)]
 
     unique_houses_visited = 1  # starts at 1 since they both give a gift to their starting position
-    total_houses_visited = 1  # starts at 2 since both gives a present to their starting position
+    total_houses_visited = 1  # starts at 1 since both gives a present to their starting position
+
+    # TODO: Pass split up instructions into the first method written above (Should be able to replace the below code)
 
     for direction in santa_instructions:
 
         if direction == '^':
             santa_x_position += 1
             santa_current_house_coordinates = (santa_x_position, santa_y_position)
-            print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
+            # print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
 
         elif direction == 'v':
             santa_x_position -= 1
             santa_current_house_coordinates = (santa_x_position, santa_y_position)
-            print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
+            # print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
 
         elif direction == '>':
             santa_y_position += 1
             santa_current_house_coordinates = (santa_x_position, santa_y_position)
-            print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
+            # print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
 
         elif direction == '<':
             santa_y_position -= 1
             santa_current_house_coordinates = (santa_x_position, santa_y_position)
-            print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
+            # print "santa_current_house_coordinates: " + str(santa_current_house_coordinates)
 
         # Need to check whether the house coord is already in the full list of houses
         # if not, add 1 to unique houses as well as 1 to total gifts
@@ -138,22 +140,22 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
         if direction == '^':
             robo_x_position += 1
             robo_current_house_coordinates = (robo_x_position, robo_y_position)
-            print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
+            # print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
 
         elif direction == 'v':
             robo_x_position -= 1
             robo_current_house_coordinates = (robo_x_position, robo_y_position)
-            print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
+            # print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
 
         elif direction == '>':
             robo_y_position += 1
             robo_current_house_coordinates = (robo_x_position, robo_y_position)
-            print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
+            # print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
 
         elif direction == '<':
             robo_y_position -= 1
             robo_current_house_coordinates = (robo_x_position, robo_y_position)
-            print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
+            # print "robo_current_house_coordinates: " + str(robo_current_house_coordinates)
 
         # Need to check whether the house coord is already in the full list of houses
         # if not, add 1 to unique houses as well as 1 to total gifts
