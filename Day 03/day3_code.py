@@ -97,6 +97,12 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
 
     all_places_visited = [(0, 0)]
 
+    santas_unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
+    santas_total_houses_visited = 1  # starts at 1 since he gives a present to his starting position
+
+    robo_unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
+    robo_total_houses_visited = 1  # starts at 1 since he gives a present to his starting position
+
     unique_houses_visited = 1  # starts at 1 since he gives a present to his starting location
     total_houses_visited = 1  # starts at 1 since he gives a present to his starting position
 
@@ -125,13 +131,14 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
         # Need to check whether the house coord is already in the full list of houses
         # if not, add 1 to unique houses as well as 1 to total gifts
         if santa_current_house_coordinates not in all_places_visited:
-            unique_houses_visited += 1
-            total_houses_visited += 1
+            santas_unique_houses_visited += 1
+            santas_total_houses_visited += 1
+
             all_places_visited.append(santa_current_house_coordinates)
             # print "all_places_visited: " + str(all_places_visited)
         # else add to total houses list only
         else:
-            total_houses_visited += 1
+            santas_total_houses_visited += 1
             all_places_visited.append(santa_current_house_coordinates)
             # print "all_places_visited: " + str(all_places_visited)
 
@@ -160,15 +167,24 @@ def calculate_unique_num_houses_santa_and_robo_visited(instructions):
         # Need to check whether the house coord is already in the full list of houses
         # if not, add 1 to unique houses as well as 1 to total gifts
         if robo_current_house_coordinates not in all_places_visited:
-            unique_houses_visited += 1
-            total_houses_visited += 1
+            robo_unique_houses_visited += 1
+            robo_total_houses_visited += 1
+
             all_places_visited.append(robo_current_house_coordinates)
             # print "all_places_visited: " + str(all_places_visited)
         # else add to total houses list only
         else:
-            total_houses_visited += 1
+            robo_total_houses_visited += 1
             all_places_visited.append(robo_current_house_coordinates)
             # print "all_places_visited: " + str(all_places_visited)
+
+    print "santas_unique_houses_visited is: " + str(santas_unique_houses_visited)
+    print "robo_unique_houses_visited is: " + str(robo_unique_houses_visited)
+    print "santas_total_houses_visited is: " + str(santas_total_houses_visited)
+    print "robo_total_houses_visited is: " + str(robo_total_houses_visited)
+
+    unique_houses_visited = santas_unique_houses_visited + robo_unique_houses_visited
+    total_houses_visited = santas_total_houses_visited = robo_total_houses_visited
 
     print "unique_houses_visited is: " + str(unique_houses_visited)
     print "total_houses_visited is: " + str(total_houses_visited)
