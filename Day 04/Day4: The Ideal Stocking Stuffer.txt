@@ -26,3 +26,7 @@ Your puzzle input is: yzbqklnj
 
 Once answer is figured out, go to: http://adventofcode.com/day/4
 And enter your answer there.
+
+--- Part Two ---
+
+Now find one that starts with six zeroes.
