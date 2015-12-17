@@ -59,10 +59,16 @@ def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
     return num_of_nice_strings
 
 
+# NOTE: Can make this return true or false and then call this in another method?
 def determine_if_string_contains_at_least_one_letter_which_repeats(string):
+    """
+    # Check if the string contains at least one letter which repeats with exactly one letter between them
+    # Example: like xyx, abcdefeghi (efe), or even aaa.'
+    :param string: Example: xyx or abcdefeghi
+    :return: a number value of 1 if the string matches this rule
+    """
 
     print "string is: " + str(string)
-
     num_of_nice_strings = 0
 
 
