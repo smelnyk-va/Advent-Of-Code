@@ -31,6 +31,10 @@ def one_funtion_to_do_it_all(strings):
     for string in strings:
         print "string is: " + str(string)
 
+        string = string.replace('\n', '')
+        num_of_vowels_in_string = 0
+
+        # ==== Check if String Passes the First Rule check ==== #
         # loop over each character in the string
         for character in string:
             # if current character is a vowel (aeiou)
@@ -43,6 +47,7 @@ def one_funtion_to_do_it_all(strings):
             # the String passes the First rule check
             passed_vowel_test = True
 
+        # ==== Check if String Passes the Second Rule check ==== #
         # loop through each character in the string until we get to the end of the string
         for character in range(len(string)-1):
             # if the current character matches the character next to it
@@ -50,6 +55,7 @@ def one_funtion_to_do_it_all(strings):
                 # the String passes the second rule check
                 passed_repeated_character_test = True
 
+        # ==== Check if String Passes the Third Rule check ==== #
         has_ab = string.find('ab')
         # print "has_ab is: " + str(has_ab)
         has_cd = string.find('cd')
@@ -64,7 +70,7 @@ def one_funtion_to_do_it_all(strings):
             # the String passes the third rule check
             passed_third_test = True
 
-        # If the string passes all three rules, then increment the num of nice strings
+        # ==== Check if String Passes the All Three Rule checks ==== #
         if passed_vowel_test and passed_repeated_character_test and passed_third_test:
             # this string is a "Nice" word
             num_of_nice_strings += 1
@@ -73,12 +79,24 @@ def one_funtion_to_do_it_all(strings):
             passed_vowel_test = False
             passed_repeated_character_test = False
             passed_third_test = False
+        else:
+            # reset the checks for the new word
+            passed_vowel_test = False
+            passed_repeated_character_test = False
+            passed_third_test = False
 
     return num_of_nice_strings
 
 
+# ==== The separate functions below aren't needed once the above is working ==== #
+"""
+I broke it out into separate methods to get the code working first and then combined them to all be in the
+same function above.
 
-# If doing it the follow ways won't work, look into using regexes
+Another way to redo this day would be using regexes.
+"""
+
+
 def get_total_of_nice_strings(strings):
 
     num_of_nice_strings = 0
@@ -120,7 +138,7 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
     # check if the string contains at least one letter that appears twice in a row, like xx, abcdde
     # (dd), or aabbccdd (aa, bb, cc, or dd).
 
-    print "string is: " + str(string)
+    # print "string is: " + str(string)
 
     num_of_nice_strings = 0
     repeated_character_exists = False

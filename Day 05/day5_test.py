@@ -12,9 +12,9 @@ class Day5Part1OneFunctionToDoAllTests(unittest.TestCase):
         list_of_strings = open('input.txt', 'r')
         result = one_funtion_to_do_it_all(list_of_strings)
         # self.assertEqual(2, result)
-        print "The Answer to Day 5, Part 1 is: " + str(result) #Not: 999 or 451
+        print "The Answer to Day 5, Part 1 is: " + str(result) # Answer: 255
 
-    def test_should_pass_all_three_rules(self):
+    def test_should_pass_all_three_rules_for_only_2(self):
         list_of_strings = open('testinput.txt', 'r')
         result = one_funtion_to_do_it_all(list_of_strings)
         self.assertEqual(2, result)
@@ -43,6 +43,10 @@ class Day5Part1DetermineIfStringHasThreeVowelsTests(unittest.TestCase):
     def test_contains_at_least_three_vowels_three(self):
         result = determine_if_string_has_three_vowels('aeiouaeiouaeiou')
         self.assertEqual(1, result)
+
+    def test_does_not_contain_at_least_three_vowels_only_1_vowel(self):
+        result = determine_if_string_has_three_vowels('dvszwmarrgswjxmb') #has only 1 vowel
+        self.assertEqual(0, result)
 
     def test_does_not_contain_at_least_three_vowels_only_1_vowel(self):
         result = determine_if_string_has_three_vowels('dvszwmarrgswjxmb') #has only 1 vowel
