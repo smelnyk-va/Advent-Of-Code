@@ -36,16 +36,31 @@ def mine_bitcoins(secret_key):
     hash_answer = ''
     hash_hexdigest = ''
 
+    secret_key_updated = ''
+
     md5_hash = md5.new()
-
-    md5_hash.update(secret_key)
-
-    hash_hexdigest = md5_hash.hexdigest()
 
     # Time to find the lowest number the hex combines with to make a MD5
     # hash starting with five zeros
-    # Keep regenerating the has until we get one with 5 leading zeros
+    # Keep regenerating the hash until we get one with 5 leading zeros
+        # return the number that produced a has with the 5 leading zeros?
 
-    hash_answer = hash_hexdigest
+    for x in range(0, 1048971):
 
-    return hash_answer
+        # Need to append the number at the end of the string and then update that, not 2 updates
+        secret_key_updated = secret_key + str(x)
+        # print "secret_key_updated is: " + str(secret_key_updated)
+
+        md5_hash.update(secret_key_updated)
+
+        # print "md5_hash is: " + str(md5_hash)
+
+        hash_hexdigest = md5_hash.hexdigest()
+        hash_answer = hash_hexdigest
+
+        # print "Current hash_answer is: " + str(hash_answer)
+
+        if hash_answer.startswith('00000'):
+            print "Current hash_answer is: " + str(hash_answer)
+            return x
+
