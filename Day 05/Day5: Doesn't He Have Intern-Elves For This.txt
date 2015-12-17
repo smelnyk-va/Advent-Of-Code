@@ -57,3 +57,6 @@ ieodomkazucvgmuy is naughty because it has a repeating letter with one between (
 that appears twice.
 
 How many strings are nice under these new rules?
+
+Once answer is figured out, go to: http://adventofcode.com/day/5
+And enter your answer there.

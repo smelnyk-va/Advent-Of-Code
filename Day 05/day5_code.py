@@ -1,18 +1,89 @@
 __author__ = 'smelnyk'
 
-"""
-Santa needs help figuring out which strings in his text file are naughty or nice.
 
-A nice string is one with all of the following properties:
+def one_funtion_to_do_it_all_part_2(strings):
+    """
+    Realizing the error of his ways, Santa has switched to a better model of determining whether a string is
+    naughty or nice. None of the old rules apply, as they are all clearly ridiculous.
 
-* It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
-* It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or
-  aabbccdd (aa, bb, cc, or dd).
-* It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the
-  other requirements.
-"""
+    Now, a nice string is one with all of the following properties:
 
-def one_funtion_to_do_it_all(strings):
+    It contains a pair of any two letters that appears at least twice in the string without overlapping,
+    like xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+
+    It contains at least one letter which repeats with exactly one letter between them, like xyx,
+    abcdefeghi (efe), or even aaa.
+    """
+
+    # print "strings is: " + str(strings.read())
+
+    num_of_nice_strings = 0
+
+    passed_first_test = False
+    passed_second_test = False
+
+    # Loop through all the individual strings in the list of strings
+    for string in strings:
+        print "string is: " + str(string)
+
+        string = string.replace('\n', '')
+
+        # Check if the string contains a pair of any two letters that appears at least twice in the string
+        # without overlapping.
+        # Example. xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+
+        # Check if the string contains at least one letter which repeats with exactly one letter between them
+        # Example: like xyx, abcdefeghi (efe), or even aaa.
+
+    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    return num_of_nice_strings
+
+
+def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
+    """
+    Check if the string contains a pair of any two letters that appears at least twice in the string
+    without overlapping.
+
+    Example. xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+    :param string: Example: uurcxstgmygtbstg or xxyxx
+    :return: a number value of 1 if the string matches this rule
+    """
+    print "string is: " + str(string)
+
+    num_of_nice_strings = 0
+
+    # Will need to use .find() likely
+
+
+
+    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    return num_of_nice_strings
+
+
+def determine_if_string_contains_at_least_one_letter_which_repeats(string):
+
+    print "string is: " + str(string)
+
+    num_of_nice_strings = 0
+
+
+
+    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    return num_of_nice_strings
+
+
+def one_funtion_to_do_it_all_part_1(strings):
+    """
+    Santa needs help figuring out which strings in his text file are naughty or nice.
+
+    A nice string is one with all of the following properties:
+
+    * It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
+    * It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or
+      aabbccdd (aa, bb, cc, or dd).
+    * It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the
+      other requirements.
+    """
 
     # print "strings is: " + str(strings.read())
 
@@ -49,9 +120,9 @@ def one_funtion_to_do_it_all(strings):
 
         # ==== Check if String Passes the Second Rule check ==== #
         # loop through each character in the string until we get to the end of the string
-        for character in range(len(string)-1):
+        for character in range(len(string) - 1):
             # if the current character matches the character next to it
-            if string[character+1] == string[character]:
+            if string[character + 1] == string[character]:
                 # the String passes the second rule check
                 passed_repeated_character_test = True
 
@@ -98,7 +169,6 @@ Another way to redo this day would be using regexes.
 
 
 def get_total_of_nice_strings(strings):
-
     num_of_nice_strings = 0
 
     for string in strings:
@@ -144,10 +214,10 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
     repeated_character_exists = False
 
     # loop through each character in the string until we get to the end of the string
-    for character in range(len(string)-1):
+    for character in range(len(string) - 1):
 
         # if the current character matches the character next to it
-        if string[character+1] == string[character]:
+        if string[character + 1] == string[character]:
             # It matches the rule
             repeated_character_exists = True
 
