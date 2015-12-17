@@ -71,27 +71,26 @@ def determine_if_string_has_ab_cd_pq_or_xy(string):
     num_of_nice_strings = 0
     has_ab = 0
     has_cd = 0
-    has_pg = 0
+    has_pq = 0
     has_xy = 0
+
+    # Need a way to loop over the current string to do each check just once for each string passed in
 
     has_ab = string.find('ab')
     print "has_ab is: " + str(has_ab)
-    if has_ab == -1:  # If string does not have "ab"
-        num_of_nice_strings += 1
 
     has_cd = string.find('cd')
     print "has_cd is: " + str(has_cd)
-    if has_cd == -1:  # If string does not have "cd"
-        num_of_nice_strings += 1
 
-    has_pg = string.find('pg')
-    print "has_pg is: " + str(has_pg)
-    if has_pg == -1:  # If string does not have "pg"
-        num_of_nice_strings += 1
+    has_pq = string.find('pq')
+    print "has_pq is: " + str(has_pq)
 
     has_xy = string.find('xy')
     print "has_xy is: " + str(has_xy)
-    if has_xy == -1:  # If string does not have "xy"
+
+    # If string does not have "ab", "cd', "pg" or "xy"
+    if has_ab == -1 and has_cd == -1 and has_pq == -1 and has_xy == -1:
+        # the string passes the rule
         num_of_nice_strings += 1
 
     print "num_of_nice_strings (determine_if_string_has_ab_cd_pq_or_xy is): " + str(num_of_nice_strings)

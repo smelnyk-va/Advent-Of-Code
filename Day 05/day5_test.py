@@ -64,35 +64,35 @@ class Day5Part1DetermineIfStringHasAbCdPqXyTests(unittest.TestCase):
 
     def test_does_contain_ab_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('kpvwblrizaabmnhz')
-        self.assertEqual(1, result)
+        self.assertEqual(0, result)
 
     def test_does_not_contain_ab_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('zetxvrgjmblxvakr')
-        self.assertEqual(0, result)
+        self.assertEqual(1, result)
 
     def test_does_contain_cd_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('tfetfqojqcdzlpbm')
-        self.assertEqual(1, result)
+        self.assertEqual(0, result)
 
     def test_does_not_contain_cd_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('qpnxkuldeiituggg')
-        self.assertEqual(0, result)
+        self.assertEqual(1, result)
 
     def test_does_contain_pq_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('ydjyboqwhfpqfydc')
-        self.assertEqual(1, result)
+        self.assertEqual(0, result)
 
     def test_does_not_contain_pq_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('dwhttezyanrnbybv')
-        self.assertEqual(0, result)
+        self.assertEqual(1, result)
 
     def test_does_contain_xy_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('haegwjzuvuyypxyu')
-        self.assertEqual(1, result)
+        self.assertEqual(0, result)
 
     def test_does_not_contain_xy_in_string(self):
         result = determine_if_string_has_ab_cd_pq_or_xy('haegxwjzuvuyypyu')
-        self.assertEqual(0, result)
+        self.assertEqual(1, result)
 
 
 
