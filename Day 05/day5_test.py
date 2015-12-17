@@ -2,7 +2,23 @@ __author__ = 'smelnyk'
 
 import unittest
 from day5_code import determine_if_string_has_three_vowels, get_total_of_nice_strings, \
-    determine_if_at_least_one_letter_appears_twice_in_a_row_in_string, determine_if_string_has_ab_cd_pq_or_xy
+    determine_if_at_least_one_letter_appears_twice_in_a_row_in_string, determine_if_string_has_ab_cd_pq_or_xy, \
+    one_funtion_to_do_it_all
+
+
+class Day5Part1OneFunctionToDoAllTests(unittest.TestCase):
+
+    def test_takes_in_multiple_strings(self):
+        list_of_strings = open('input.txt', 'r')
+        result = one_funtion_to_do_it_all(list_of_strings)
+        # self.assertEqual(2, result)
+        print "The Answer to Day 5, Part 1 is: " + str(result) #Not: 999 or 451
+
+    def test_should_pass_all_three_rules(self):
+        list_of_strings = open('testinput.txt', 'r')
+        result = one_funtion_to_do_it_all(list_of_strings)
+        self.assertEqual(2, result)
+        print "The answer is: " + str(result)
 
 
 class Day5Part1GetTotalOfNiceStringsTests(unittest.TestCase):

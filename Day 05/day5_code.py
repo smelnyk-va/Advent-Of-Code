@@ -12,6 +12,71 @@ A nice string is one with all of the following properties:
   other requirements.
 """
 
+def one_funtion_to_do_it_all(strings):
+
+    # print "strings is: " + str(strings.read())
+
+    num_of_nice_strings = 0
+    has_ab = 0
+    has_cd = 0
+    has_pq = 0
+    has_xy = 0
+    num_of_vowels_in_string = 0
+
+    passed_vowel_test = False
+    passed_repeated_character_test = False
+    passed_third_test = False
+
+    # Loop through all the individual strings in the list of strings
+    for string in strings:
+        print "string is: " + str(string)
+
+        # loop over each character in the string
+        for character in string:
+            # if current character is a vowel (aeiou)
+            if character == 'a' or character == 'e' or character == 'i' or character == 'o' or character == 'u':
+                # increment num_of_vowels_in_string by 1
+                num_of_vowels_in_string += 1
+
+        # If the string has at least three vowels
+        if num_of_vowels_in_string >= 3:
+            # the String passes the First rule check
+            passed_vowel_test = True
+
+        # loop through each character in the string until we get to the end of the string
+        for character in range(len(string)-1):
+            # if the current character matches the character next to it
+            if string[character+1] == string[character]:
+                # the String passes the second rule check
+                passed_repeated_character_test = True
+
+        has_ab = string.find('ab')
+        # print "has_ab is: " + str(has_ab)
+        has_cd = string.find('cd')
+        # print "has_cd is: " + str(has_cd)
+        has_pq = string.find('pq')
+        # print "has_pq is: " + str(has_pq)
+        has_xy = string.find('xy')
+        # print "has_xy is: " + str(has_xy)
+
+        # If string does not have "ab", "cd', "pg" or "xy"
+        if has_ab == -1 and has_cd == -1 and has_pq == -1 and has_xy == -1:
+            # the String passes the third rule check
+            passed_third_test = True
+
+        # If the string passes all three rules, then increment the num of nice strings
+        if passed_vowel_test and passed_repeated_character_test and passed_third_test:
+            # this string is a "Nice" word
+            num_of_nice_strings += 1
+
+            # reset the checks for the new word
+            passed_vowel_test = False
+            passed_repeated_character_test = False
+            passed_third_test = False
+
+    return num_of_nice_strings
+
+
 
 # If doing it the follow ways won't work, look into using regexes
 def get_total_of_nice_strings(strings):
@@ -60,34 +125,6 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
     num_of_nice_strings = 0
     repeated_character_exists = False
 
-    # for character in string:
-    #     print "character is: " + str(character)
-    #
-    #     # Right now this is counting the number of times the character appears in the string
-    #     # has_double_letter = string.count(character)
-    #     # print "has_double_letter is: " + str(has_double_letter)
-    #     #
-    #     # if has_double_letter >= 2:
-    #     #     num_of_nice_strings += 1
-    #
-    #     # Need to check whether the character following the current character matches this character or not
-    #     # Right now the bottom code is running a couple extra times than it should against my string
-    #     # if there is a dupe character in the list, then it'll end up doing the following for each
-    #     # dupe character.  Need a better, more efficient way, to do this.
-    #
-    #     # create a double sequence of the current character
-    #     double_of_character = character * 2
-    #     print "double_of_character is: " + str(double_of_character)
-    #
-    #     # check if that double sequence appears in the string
-    #     has_double_character = string.find(double_of_character)
-    #     print "has_double_character is: " + str(has_double_character)
-    #
-    #     # if the double sequence does appear in the string
-    #     if has_double_character >= 0:
-    #         # it passes the rule
-    #         num_of_nice_strings += 1
-
     # loop through each character in the string until we get to the end of the string
     for character in range(len(string)-1):
 
@@ -100,12 +137,9 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
                 num_of_nice_strings += 1
                 return num_of_nice_strings
 
-    return num_of_nice_strings
-
-
     # print "num_of_nice_strings (determine_if_letter_appears_twice_in_a_row_in_string is): " + str(num_of_nice_strings)
     # print
-    # return num_of_nice_strings
+    return num_of_nice_strings
 
 
 def determine_if_string_has_ab_cd_pq_or_xy(string):
