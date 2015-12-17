@@ -13,6 +13,7 @@ A nice string is one with all of the following properties:
 """
 
 
+# If doing it the follow ways won't work, look into using regexes
 def get_total_of_nice_strings(strings):
 
     num_of_nice_strings = 0
@@ -54,9 +55,37 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
     # check if the string contains at least one letter that appears twice in a row, like xx, abcdde
     # (dd), or aabbccdd (aa, bb, cc, or dd).
 
+    print "string is: " + str(string)
+
     num_of_nice_strings = 0
 
+    for character in string:
+        print "character is: " + str(character)
 
+        # Right now this is counting the number of times the character appears in the string
+        # has_double_letter = string.count(character)
+        # print "has_double_letter is: " + str(has_double_letter)
+        #
+        # if has_double_letter >= 2:
+        #     num_of_nice_strings += 1
+
+        # Need to check whether the character following the current character matches this character or not
+        # Right now the bottom code is running a couple extra times than it should against my string
+        # if there is a dupe character in the list, then it'll end up doing the following for each
+        # dupe character.  Need a better, more efficient way, to do this.
+
+        # create a double sequence of the current character
+        double_of_character = character * 2
+        print "double_of_character is: " + str(double_of_character)
+
+        # check if that double sequence appears in the string
+        has_double_character = string.find(double_of_character)
+        print "has_double_character is: " + str(has_double_character)
+
+        # if the double sequence does appear in the string
+        if has_double_character >= 0:
+            # it passes the rule
+            num_of_nice_strings += 1
 
     print "num_of_nice_strings (determine_if_letter_appears_twice_in_a_row_in_string is): " + str(num_of_nice_strings)
     print
