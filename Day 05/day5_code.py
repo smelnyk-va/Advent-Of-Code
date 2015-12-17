@@ -58,38 +58,54 @@ def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
     print "string is: " + str(string)
 
     num_of_nice_strings = 0
+    repeated_character_exists = False
 
-    for character in string:
-        print "character is: " + str(character)
+    # for character in string:
+    #     print "character is: " + str(character)
+    #
+    #     # Right now this is counting the number of times the character appears in the string
+    #     # has_double_letter = string.count(character)
+    #     # print "has_double_letter is: " + str(has_double_letter)
+    #     #
+    #     # if has_double_letter >= 2:
+    #     #     num_of_nice_strings += 1
+    #
+    #     # Need to check whether the character following the current character matches this character or not
+    #     # Right now the bottom code is running a couple extra times than it should against my string
+    #     # if there is a dupe character in the list, then it'll end up doing the following for each
+    #     # dupe character.  Need a better, more efficient way, to do this.
+    #
+    #     # create a double sequence of the current character
+    #     double_of_character = character * 2
+    #     print "double_of_character is: " + str(double_of_character)
+    #
+    #     # check if that double sequence appears in the string
+    #     has_double_character = string.find(double_of_character)
+    #     print "has_double_character is: " + str(has_double_character)
+    #
+    #     # if the double sequence does appear in the string
+    #     if has_double_character >= 0:
+    #         # it passes the rule
+    #         num_of_nice_strings += 1
 
-        # Right now this is counting the number of times the character appears in the string
-        # has_double_letter = string.count(character)
-        # print "has_double_letter is: " + str(has_double_letter)
-        #
-        # if has_double_letter >= 2:
-        #     num_of_nice_strings += 1
+    # loop through each character in the string until we get to the end of the string
+    for character in range(len(string)-1):
 
-        # Need to check whether the character following the current character matches this character or not
-        # Right now the bottom code is running a couple extra times than it should against my string
-        # if there is a dupe character in the list, then it'll end up doing the following for each
-        # dupe character.  Need a better, more efficient way, to do this.
+        # if the current character matches the character next to it
+        if string[character+1] == string[character]:
+            # It matches the rule
+            repeated_character_exists = True
 
-        # create a double sequence of the current character
-        double_of_character = character * 2
-        print "double_of_character is: " + str(double_of_character)
+            if repeated_character_exists:
+                num_of_nice_strings += 1
+                return num_of_nice_strings
 
-        # check if that double sequence appears in the string
-        has_double_character = string.find(double_of_character)
-        print "has_double_character is: " + str(has_double_character)
-
-        # if the double sequence does appear in the string
-        if has_double_character >= 0:
-            # it passes the rule
-            num_of_nice_strings += 1
-
-    print "num_of_nice_strings (determine_if_letter_appears_twice_in_a_row_in_string is): " + str(num_of_nice_strings)
-    print
     return num_of_nice_strings
+
+
+    # print "num_of_nice_strings (determine_if_letter_appears_twice_in_a_row_in_string is): " + str(num_of_nice_strings)
+    # print
+    # return num_of_nice_strings
 
 
 def determine_if_string_has_ab_cd_pq_or_xy(string):
