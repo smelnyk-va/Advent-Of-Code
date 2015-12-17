@@ -1,45 +1,101 @@
 __author__ = 'smelnyk'
 
+"""
+Santa needs help figuring out which strings in his text file are naughty or nice.
 
-def find_number_strings_that_are_nice(strings):
-    """
-    Santa needs help figuring out which strings in his text file are naughty or nice.
+A nice string is one with all of the following properties:
 
-    A nice string is one with all of the following properties:
+* It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
+* It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or
+  aabbccdd (aa, bb, cc, or dd).
+* It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the
+  other requirements.
+"""
 
-    * It contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
-    * It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or
-      aabbccdd (aa, bb, cc, or dd).
-    * It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the
-      other requirements.
 
-    :param strings: a list of strings to check against
-    :return: num of strings matching the "nice" criteria
-    """
+def get_total_of_nice_strings(strings):
 
+    num_of_nice_strings = 0
+
+    for string in strings:
+        print "string is: " + str(string)
+        # string.replace('\n', '')
+        num_of_nice_strings += determine_if_string_has_three_vowels(string)
+        num_of_nice_strings += determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string)
+        num_of_nice_strings += determine_if_string_has_ab_cd_pq_or_xy(string)
+
+    print "The Total of Nice Strings is: " + str(num_of_nice_strings)
+    return num_of_nice_strings
+
+
+def determine_if_string_has_three_vowels(string):
+    # check if string contains at least three vowels (aeiou only), like aei, xazegov, or aeiouaeiouaeiou.
     num_of_vowels = 0
     num_of_nice_strings = 0
 
     # loop over each character in the string
-    for character in strings:
-        # if three vowels found (aeiou)
+    for character in string:
+        # if current character is a vowel (aeiou)
         if character == 'a' or character == 'e' or character == 'i' or character == 'o' or character == 'u':
             # incrememt num_of_vowels to be 1
             num_of_vowels += 1
 
     # If the string has at least three vowels
     if num_of_vowels >= 3:
+        # the string passes the first check
         num_of_nice_strings += 1
 
-    # check if the string contains at least one letter that appears twice in a row, like xx, abcdde (dd), or
-    # aabbccdd (aa, bb, cc, or dd).
+    print "num_of_nice_strings is (determine_if_string_has_three_vowels): " + str(num_of_nice_strings)
+    print
+    return num_of_nice_strings
 
+
+def determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string):
+    # check if the string contains at least one letter that appears twice in a row, like xx, abcdde
+    # (dd), or aabbccdd (aa, bb, cc, or dd).
+
+    num_of_nice_strings = 0
+
+
+
+    print "num_of_nice_strings (determine_if_letter_appears_twice_in_a_row_in_string is): " + str(num_of_nice_strings)
+    print
+    return num_of_nice_strings
+
+
+def determine_if_string_has_ab_cd_pq_or_xy(string):
     # check that it doesn't contain the following strings(ab, cd, pq, or xy)
     # even if they are part of one of the other requirements.
+    print "string is (determine_if_string_has_ab_cd_pq_or_xy): " + str(string)
 
-    if num_of_vowels >= 3:
+    num_of_nice_strings = 0
+    has_ab = 0
+    has_cd = 0
+    has_pg = 0
+    has_xy = 0
+
+    has_ab = string.find('ab')
+    print "has_ab is: " + str(has_ab)
+    if has_ab == -1:  # If string does not have "ab"
         num_of_nice_strings += 1
 
-    # return num_of_nice_words
-    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    has_cd = string.find('cd')
+    print "has_cd is: " + str(has_cd)
+    if has_cd == -1:  # If string does not have "cd"
+        num_of_nice_strings += 1
+
+    has_pg = string.find('pg')
+    print "has_pg is: " + str(has_pg)
+    if has_pg == -1:  # If string does not have "pg"
+        num_of_nice_strings += 1
+
+    has_xy = string.find('xy')
+    print "has_xy is: " + str(has_xy)
+    if has_xy == -1:  # If string does not have "xy"
+        num_of_nice_strings += 1
+
+    print "num_of_nice_strings (determine_if_string_has_ab_cd_pq_or_xy is): " + str(num_of_nice_strings)
+    print
     return num_of_nice_strings
+
+
