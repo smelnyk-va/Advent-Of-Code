@@ -6,7 +6,7 @@ from day3_code import calculate_num_houses_receiving_presents, \
 
 
 
-class Day3PartOne(unittest.TestCase):
+class Day3PartOneTests(unittest.TestCase):
 
     def test_go_west_at_least_2_houses_visited(self):
         result = calculate_num_houses_receiving_presents('<')
@@ -46,7 +46,7 @@ class Day3PartOne(unittest.TestCase):
         self.assertEqual(2565, result)
 
 
-class Day3PartTwo(unittest.TestCase):
+class Day3PartTwoTests(unittest.TestCase):
 
     def test_first_test_example(self):
         result = calculate_unique_num_houses_santa_and_robo_visited('^v')
