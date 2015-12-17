@@ -49,7 +49,6 @@ def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
     :return: a number value of 1 if the string matches this rule
     """
     print "string is: " + str(string)
-
     num_of_nice_strings = 0
 
     # Will need to use .find() likely
@@ -85,23 +84,13 @@ def one_funtion_to_do_it_all_part_1(strings):
       other requirements.
     """
 
-    # print "strings is: " + str(strings.read())
-
     num_of_nice_strings = 0
-    has_ab = 0
-    has_cd = 0
-    has_pq = 0
-    has_xy = 0
-    num_of_vowels_in_string = 0
-
-    passed_vowel_test = False
-    passed_repeated_character_test = False
-    passed_third_test = False
 
     # Loop through all the individual strings in the list of strings
     for string in strings:
         print "string is: " + str(string)
 
+        passed_vowel_test, passed_repeated_character_test, passed_third_test = False, False, False
         string = string.replace('\n', '')
         num_of_vowels_in_string = 0
 
@@ -128,13 +117,9 @@ def one_funtion_to_do_it_all_part_1(strings):
 
         # ==== Check if String Passes the Third Rule check ==== #
         has_ab = string.find('ab')
-        # print "has_ab is: " + str(has_ab)
         has_cd = string.find('cd')
-        # print "has_cd is: " + str(has_cd)
         has_pq = string.find('pq')
-        # print "has_pq is: " + str(has_pq)
         has_xy = string.find('xy')
-        # print "has_xy is: " + str(has_xy)
 
         # If string does not have "ab", "cd', "pg" or "xy"
         if has_ab == -1 and has_cd == -1 and has_pq == -1 and has_xy == -1:
@@ -145,16 +130,6 @@ def one_funtion_to_do_it_all_part_1(strings):
         if passed_vowel_test and passed_repeated_character_test and passed_third_test:
             # this string is a "Nice" word
             num_of_nice_strings += 1
-
-            # reset the checks for the new word
-            passed_vowel_test = False
-            passed_repeated_character_test = False
-            passed_third_test = False
-        else:
-            # reset the checks for the new word
-            passed_vowel_test = False
-            passed_repeated_character_test = False
-            passed_third_test = False
 
     return num_of_nice_strings
 
