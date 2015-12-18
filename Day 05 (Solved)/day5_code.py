@@ -48,50 +48,6 @@ def one_function_to_do_it_all_part_2(strings):
     print "num_of_nice_strings is: " + str(num_of_nice_strings)
     return num_of_nice_strings
 
-
-def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
-    """
-    Check if the string contains a pair of any two letters that appears at least twice in the string
-    without overlapping.
-
-    Example. xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
-    :param string: Example: uurcxstgmygtbstg or xxyxx
-    :return: a number value of 1 if the string matches this rule
-    """
-    # print "string is: " + str(string)
-    num_of_nice_strings = 0
-
-    # Not: ([a-z])\1
-    match = re.search(r'(..).*\1', string)
-
-    if match:
-        num_of_nice_strings += 1
-
-    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
-    return num_of_nice_strings
-
-
-# NOTE: Can make this return true or false and then call this in another method?
-def determine_if_string_contains_at_least_one_letter_which_repeats(string):
-    """
-    # Check if the string contains at least one letter which repeats with exactly one letter between them
-    # Example: like xyx, abcdefeghi (efe), or even aaa.'
-    :param string: Example: xyx or abcdefeghi
-    :return: a number value of 1 if the string matches this rule
-    """
-
-    # print "string is: " + str(string)
-    num_of_nice_strings = 0
-
-    match = re.search(r'([a-z])[a-z]\1', string)
-
-    if match:
-        num_of_nice_strings += 1
-
-    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
-    return num_of_nice_strings
-
-
 def one_function_to_do_it_all_part_1(strings):
     """
     Santa needs help figuring out which strings in his text file are naughty or nice.
@@ -162,19 +118,46 @@ same function above.
 
 Another way to redo this day would be using regexes.
 """
+def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
+    """
+    Check if the string contains a pair of any two letters that appears at least twice in the string
+    without overlapping.
 
-
-def get_total_of_nice_strings(strings):
+    Example. xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+    :param string: Example: uurcxstgmygtbstg or xxyxx
+    :return: a number value of 1 if the string matches this rule
+    """
+    # print "string is: " + str(string)
     num_of_nice_strings = 0
 
-    for string in strings:
-        print "string is: " + str(string)
-        # string.replace('\n', '')
-        num_of_nice_strings += determine_if_string_has_three_vowels(string)
-        num_of_nice_strings += determine_if_at_least_one_letter_appears_twice_in_a_row_in_string(string)
-        num_of_nice_strings += determine_if_string_has_ab_cd_pq_or_xy(string)
+    # Not: ([a-z])\1
+    match = re.search(r'(..).*\1', string)
 
-    print "The Total of Nice Strings is: " + str(num_of_nice_strings)
+    if match:
+        num_of_nice_strings += 1
+
+    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    return num_of_nice_strings
+
+
+# NOTE: Can make this return true or false and then call this in another method?
+def determine_if_string_contains_at_least_one_letter_which_repeats(string):
+    """
+    # Check if the string contains at least one letter which repeats with exactly one letter between them
+    # Example: like xyx, abcdefeghi (efe), or even aaa.'
+    :param string: Example: xyx or abcdefeghi
+    :return: a number value of 1 if the string matches this rule
+    """
+
+    # print "string is: " + str(string)
+    num_of_nice_strings = 0
+
+    match = re.search(r'([a-z])[a-z]\1', string)
+
+    if match:
+        num_of_nice_strings += 1
+
+    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
     return num_of_nice_strings
 
 
