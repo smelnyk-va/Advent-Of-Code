@@ -1,7 +1,9 @@
 __author__ = 'smelnyk'
 
+import re
 
-def one_funtion_to_do_it_all_part_2(strings):
+
+def one_function_to_do_it_all_part_2(strings):
     """
     Realizing the error of his ways, Santa has switched to a better model of determining whether a string is
     naughty or nice. None of the old rules apply, as they are all clearly ridiculous.
@@ -15,12 +17,15 @@ def one_funtion_to_do_it_all_part_2(strings):
     abcdefeghi (efe), or even aaa.
     """
 
+    # Able to likely do the regex checks against the whole file in one go - a possible refactor
+    # Open file
+    # f = open('test.txt', 'r')
+    # Feed the file text into findall(); it returns a list of all the found strings
+    # strings = re.findall(r'some pattern', f.read())
+
     # print "strings is: " + str(strings.read())
 
     num_of_nice_strings = 0
-
-    passed_first_test = False
-    passed_second_test = False
 
     # Loop through all the individual strings in the list of strings
     for string in strings:
@@ -31,9 +36,14 @@ def one_funtion_to_do_it_all_part_2(strings):
         # Check if the string contains a pair of any two letters that appears at least twice in the string
         # without overlapping.
         # Example. xyxy (xy) or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+        first_test_match = re.search(r'(..).*\1', string)
 
         # Check if the string contains at least one letter which repeats with exactly one letter between them
         # Example: like xyx, abcdefeghi (efe), or even aaa.
+        second_test_match = re.search(r'([a-z])[a-z]\1', string)
+
+        if first_test_match and second_test_match:
+            num_of_nice_strings += 1
 
     print "num_of_nice_strings is: " + str(num_of_nice_strings)
     return num_of_nice_strings
@@ -48,14 +58,16 @@ def determine_if_string_has_2_letters_that_appear_twice_without_overlap(string):
     :param string: Example: uurcxstgmygtbstg or xxyxx
     :return: a number value of 1 if the string matches this rule
     """
-    print "string is: " + str(string)
+    # print "string is: " + str(string)
     num_of_nice_strings = 0
 
-    # Will need to use .find() likely
+    # Not: ([a-z])\1
+    match = re.search(r'(..).*\1', string)
 
+    if match:
+        num_of_nice_strings += 1
 
-
-    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
     return num_of_nice_strings
 
 
@@ -68,16 +80,19 @@ def determine_if_string_contains_at_least_one_letter_which_repeats(string):
     :return: a number value of 1 if the string matches this rule
     """
 
-    print "string is: " + str(string)
+    # print "string is: " + str(string)
     num_of_nice_strings = 0
 
+    match = re.search(r'([a-z])[a-z]\1', string)
 
+    if match:
+        num_of_nice_strings += 1
 
-    print "num_of_nice_strings is: " + str(num_of_nice_strings)
+    # print "num_of_nice_strings is: " + str(num_of_nice_strings)
     return num_of_nice_strings
 
 
-def one_funtion_to_do_it_all_part_1(strings):
+def one_function_to_do_it_all_part_1(strings):
     """
     Santa needs help figuring out which strings in his text file are naughty or nice.
 

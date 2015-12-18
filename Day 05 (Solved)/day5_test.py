@@ -3,7 +3,7 @@ __author__ = 'smelnyk'
 import unittest
 from day5_code import determine_if_string_has_three_vowels, get_total_of_nice_strings, \
     determine_if_at_least_one_letter_appears_twice_in_a_row_in_string, determine_if_string_has_ab_cd_pq_or_xy, \
-    one_funtion_to_do_it_all_part_1, one_funtion_to_do_it_all_part_2, \
+    one_function_to_do_it_all_part_1, one_function_to_do_it_all_part_2, \
     determine_if_string_has_2_letters_that_appear_twice_without_overlap, \
     determine_if_string_contains_at_least_one_letter_which_repeats
 
@@ -12,13 +12,13 @@ class Day5Part2OneFunctionToDoPart2AllTests(unittest.TestCase):
 
     def test_solve_day_5_part_2_for_me(self):
         list_of_strings = open('input.txt', 'r')
-        result = one_funtion_to_do_it_all_part_2(list_of_strings)
-        print "The Answer to Day 5, Part 2 is: " + str(result)  # Answer:
-        # self.assertEqual(2, result)
+        result = one_function_to_do_it_all_part_2(list_of_strings)
+        print "The Answer to Day 5, Part 2 is: " + str(result)  # Answer: 55
+        # self.assertEqual(55, result)
 
     def test_should_pass_all_three_rules_for_only_2(self):
         list_of_strings = open('testinputpart2.txt', 'r')
-        result = one_funtion_to_do_it_all_part_2(list_of_strings)
+        result = one_function_to_do_it_all_part_2(list_of_strings)
         self.assertEqual(2, result)
         # print "The answer is: " + str(result)
 
@@ -38,7 +38,7 @@ class Day5Part2DetermineIfStringHas2LettersThatAppearTwiceWithoutOverlapTests(un
         self.assertEqual(0, result)
 
 
-class Day5Part2DetermineIfStringContainsAtLeastOneLetterWhichRepeats(unittest.TestCase):
+class Day5Part2DetermineIfStringContainsAtLeastOneLetterWhichRepeatsTests(unittest.TestCase):
 
     def test_string_contains_a_repeating_character_first_example(self):
         result = determine_if_string_contains_at_least_one_letter_which_repeats('xyx')
@@ -48,7 +48,7 @@ class Day5Part2DetermineIfStringContainsAtLeastOneLetterWhichRepeats(unittest.Te
         result = determine_if_string_contains_at_least_one_letter_which_repeats('abcdefeghi')
         self.assertEqual(1, result)
 
-    def test_string_contains_a_repeating_character_second_example(self):
+    def test_string_contains_a_repeating_character_third_example(self):
         result = determine_if_string_contains_at_least_one_letter_which_repeats('aaa')
         self.assertEqual(1, result)
 
@@ -57,13 +57,13 @@ class Day5Part1OneFunctionToDoAllPart1Tests(unittest.TestCase):
 
     def test_solve_day_5_part_1_for_me(self):
         list_of_strings = open('input.txt', 'r')
-        result = one_funtion_to_do_it_all_part_1(list_of_strings)
+        result = one_function_to_do_it_all_part_1(list_of_strings)
         self.assertEqual(255, result)
         # print "The Answer to Day 5, Part 1 is: " + str(result)  # Answer: 255
 
     def test_should_pass_all_three_rules_for_only_2(self):
         list_of_strings = open('testinputpart1.txt', 'r')
-        result = one_funtion_to_do_it_all_part_1(list_of_strings)
+        result = one_function_to_do_it_all_part_1(list_of_strings)
         self.assertEqual(2, result)
         # print "The answer is: " + str(result)
 
