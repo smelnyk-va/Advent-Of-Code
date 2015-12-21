@@ -54,6 +54,14 @@ class Day10Part1Tests(unittest.TestCase):
         result = get_total_length(21)
         self.assertEqual(1211, result)
 
+    def test_thirdish_example_should_return_1221(self):
+        result = get_total_length(211)
+        self.assertEqual(1221, result)
+
     def test_fourth_example_should_return_111221(self):
         result = get_total_length(1211)
         self.assertEqual(111221, result)
+
+    def test_fifth_example_should_return_312211(self):
+        result = get_total_length(111221)
+        self.assertEqual(312211, result)

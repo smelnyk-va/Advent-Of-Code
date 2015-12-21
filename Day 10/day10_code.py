@@ -1,5 +1,7 @@
 __author__ = 'smelnyk'
 
+from itertools import groupby
+
 """
 Today, the Elves are playing a game called look-and-say.
 They take turns making sequences by reading aloud the previous sequence and
@@ -30,6 +32,8 @@ def get_total_length(input_number):
 
     print "input_number is: " + str(input_number)
 
+
+    string_value = ""
     new_number = ""
     copy_of_number_one = 0
     copy_of_number_two = 0
@@ -49,61 +53,93 @@ def get_total_length(input_number):
     print "len_of_input_numbers is: " + str(len_of_input_numbers)
 
     if len_of_input_numbers >= 1:
-        for number in string_of_input_numbers:
+        for number in string_of_input_numbers: # Need to a way to make it loop through this 40 times.
             print "number is: " + number
             if number == '1':
                 string_value = '1'
                 copy_of_number_one += 1
-                new_number += str(copy_of_number_one) + string_value
+                if copy_of_number_one > 1:
+                    new_number += str(copy_of_number_one) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '2':
                 string_value = '2'
                 copy_of_number_two += 1
-                new_number += str(copy_of_number_two) + string_value
+                if copy_of_number_two > 1:
+                    new_number += str(copy_of_number_two) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '3':
                 string_value = '3'
                 copy_of_number_three += 1
-                new_number += str(copy_of_number_three) + string_value
+                if copy_of_number_three > 1:
+                    new_number += str(copy_of_number_three) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '4':
                 string_value = '4'
                 copy_of_number_four += 1
-                new_number += str(copy_of_number_four) + string_value
+                if copy_of_number_four > 1:
+                    new_number += str(copy_of_number_four) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '5':
                 string_value = '5'
                 copy_of_number_five += 1
-                new_number += str(copy_of_number_five) + string_value
+                if copy_of_number_five > 1:
+                    new_number += str(copy_of_number_five) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '6':
                 string_value = '6'
                 copy_of_number_six += 1
-                new_number += str(copy_of_number_six) + string_value
+                if copy_of_number_six > 1:
+                    new_number += str(copy_of_number_six) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '7':
                 string_value = '7'
                 copy_of_number_seven += 1
-                new_number += str(copy_of_number_seven) + string_value
+                if copy_of_number_seven > 1:
+                    new_number += str(copy_of_number_seven) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '8':
                 string_value = '8'
                 copy_of_number_eight += 1
-                new_number += str(copy_of_number_eight) + string_value
+                if copy_of_number_eight > 1:
+                    new_number += str(copy_of_number_eight) + string_value
+                else:
+                    new_number += '1' + string_value
 
             elif number == '9':
                 string_value = '9'
                 copy_of_number_nine += 1
-                new_number += str(copy_of_number_nine) + string_value
-
+                if copy_of_number_nine > 1:
+                    new_number += str(copy_of_number_nine) + string_value
+                else:
+                    new_number += '1' + string_value
             else:
                 string_value = '0'
                 copy_of_number_zero += 1
-                new_number += str(copy_of_number_zero) + string_value
+                if copy_of_number_zero > 1:
+                    new_number += str(copy_of_number_zero) + string_value
+                else:
+                    new_number += '1' + string_value
 
-    print "new_number is: " + str(new_number)
+    # Note, need to return the length of the new number.
+    int_new_num = int(new_number)
+    print "int_new_num is: " + str(int_new_num)
+    len_of_new_num = len(new_number)  # Once code appears to be working, use this answer
+    print "len_of_new_num is: " + str(len_of_new_num)
     print
-    return int(new_number)
-
+    return int_new_num
 
 
