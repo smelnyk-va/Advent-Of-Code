@@ -31,43 +31,77 @@ def get_total_length(input_number):
     print "input_number is: " + str(input_number)
 
     new_number = ""
-    num_of_copies_of_number = 0
+    copy_of_number_one = 0
+    copy_of_number_two = 0
+    copy_of_number_three = 0
+    copy_of_number_four = 0
+    copy_of_number_five = 0
+    copy_of_number_six = 0
+    copy_of_number_seven = 0
+    copy_of_number_eight = 0
+    copy_of_number_nine = 0
+    copy_of_number_zero = 0
 
-    if input_number == 1:
+    # Make int into a string so it's iterable
+    string_of_input_numbers = str(input_number)
 
-        single_digit_1 = 1
+    len_of_input_numbers = len(string_of_input_numbers)
+    print "len_of_input_numbers is: " + str(len_of_input_numbers)
 
-        num_of_copies_of_number += input_number
-        print "num_of_copies_of_number is: " + str(num_of_copies_of_number)
+    if len_of_input_numbers >= 1:
+        for number in string_of_input_numbers:
+            print "number is: " + number
+            if number == '1':
+                string_value = '1'
+                copy_of_number_one += 1
+                new_number += str(copy_of_number_one) + string_value
 
-        new_number = str(num_of_copies_of_number) + str(single_digit_1)
-        print "new_number is: " + str(new_number)
+            elif number == '2':
+                string_value = '2'
+                copy_of_number_two += 1
+                new_number += str(copy_of_number_two) + string_value
 
-    if input_number == 11:
+            elif number == '3':
+                string_value = '3'
+                copy_of_number_three += 1
+                new_number += str(copy_of_number_three) + string_value
 
-        single_digit_1 = 1
+            elif number == '4':
+                string_value = '4'
+                copy_of_number_four += 1
+                new_number += str(copy_of_number_four) + string_value
 
-        num_of_copies_of_number = (input_number + input_number) / input_number
-        print "num_of_copies_of_number is: " + str(num_of_copies_of_number)
+            elif number == '5':
+                string_value = '5'
+                copy_of_number_five += 1
+                new_number += str(copy_of_number_five) + string_value
 
-        new_number = str(num_of_copies_of_number) + str(single_digit_1)
-        print "new_number is: " + str(new_number)
+            elif number == '6':
+                string_value = '6'
+                copy_of_number_six += 1
+                new_number += str(copy_of_number_six) + string_value
 
-    if input_number == 21:
+            elif number == '7':
+                string_value = '7'
+                copy_of_number_seven += 1
+                new_number += str(copy_of_number_seven) + string_value
 
-        single_digit_1 = 2
-        single_digit_2 = 1
+            elif number == '8':
+                string_value = '8'
+                copy_of_number_eight += 1
+                new_number += str(copy_of_number_eight) + string_value
 
-        if single_digit_1 == single_digit_2:
-            num_of_copies_of_number = (input_number + input_number) / input_number
-            print "num_of_copies_of_number is: " + str(num_of_copies_of_number)
-        else:
-            num_of_copies_of_number += 1
-            print "num_of_copies_of_number is: " + str(num_of_copies_of_number)
+            elif number == '9':
+                string_value = '9'
+                copy_of_number_nine += 1
+                new_number += str(copy_of_number_nine) + string_value
 
-        new_number = str(single_digit_2) + str(single_digit_1) + str(num_of_copies_of_number) + str(single_digit_2)
-        print "new_number is: " + str(new_number)
+            else:
+                string_value = '0'
+                copy_of_number_zero += 1
+                new_number += str(copy_of_number_zero) + string_value
 
+    print "new_number is: " + str(new_number)
     print
     return int(new_number)
 
