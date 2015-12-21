@@ -152,11 +152,11 @@ def get_total_length(input_number):
     return int_new_num
 
 
-
-# Grabbed from here:
+# Grabbed from here: https://github.com/thegeneralgeneral/advent-of-code/blob/master/day10.py
 # The answer it's giving me isn't right though for some reason... oh! Need the len, not the actual number...
 # That also not the right answer for me...
 # I manually did the question answer by hand and it matches this answer... I'm not sure what's wrong...
+# Oh... this isn't looping through 40 times... that's likely why my answer is wrong.
 def generate_chunks(input_string):
     chunk = ""
     for char in input_string:
