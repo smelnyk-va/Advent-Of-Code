@@ -28,6 +28,7 @@ Starting with the digits in your puzzle input, apply this process 40 times.
 What is the length of the result?
 """
 
+# Note! My Code doesn't work!
 def get_total_length(input_number):
 
     print "input_number is: " + str(input_number)
