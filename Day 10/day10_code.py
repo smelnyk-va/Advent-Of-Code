@@ -32,8 +32,6 @@ def get_total_length(input_number):
 
     print "input_number is: " + str(input_number)
 
-
-    string_value = ""
     new_number = ""
     copy_of_number_one = 0
     copy_of_number_two = 0
@@ -154,3 +152,32 @@ def get_total_length(input_number):
     return int_new_num
 
 
+
+# Grabbed from here:
+# The answer it's giving me isn't right though for some reason... oh! Need the len, not the actual number...
+# That also not the right answer for me...
+# I manually did the question answer by hand and it matches this answer... I'm not sure what's wrong...
+def generate_chunks(input_string):
+    chunk = ""
+    for char in input_string:
+        # If this char is the same as the last char in the current chunk,
+        # or if chunk is empty and this is the first char,
+        if chunk and char == chunk[0]:
+            # qppend it.
+            chunk += char
+        # Otherwise, this is a new char:
+        else:
+            # yield the current chunk,
+            # start a new chunk with the new char.
+            if chunk:
+                yield chunk
+            chunk = char
+    # Yield the last chunk (we're out of chars.)
+    yield chunk
+
+
+def look_and_say(input_string):
+    result = ""
+    for chunk in generate_chunks(input_string):
+        result += "%s%s" % (len(chunk), chunk[0])
+    return result
