@@ -1,7 +1,7 @@
 __author__ = 'smelnyk'
 
 import unittest
-from day10_code import get_total_length, look_and_say
+from day10_code import get_total_length, look_and_say, look_and_say_chris
 
 
 class Day10Part1Tests(unittest.TestCase):
@@ -134,3 +134,12 @@ class Day10Part1JennaSolutionTests(unittest.TestCase):
     def test_fifth_example_should_return_312211(self):
         result = look_and_say('111221')
         self.assertEqual('312211', result)
+
+
+class Day10Part1ChrisSolutionTests(unittest.TestCase):
+
+    def test_solve_day_5_part1_for_me(self):
+        result = look_and_say_chris('3113322113') #Answer not: 329356 or 6
+        print "result is: " + str(result)
+        len_of_result = len(result)
+        print "Length of the Result is: " + str(len_of_result)

@@ -1,6 +1,7 @@
 __author__ = 'smelnyk'
 
-from itertools import groupby
+# from itertools import groupby
+import re
 
 """
 Today, the Elves are playing a game called look-and-say.
@@ -60,89 +61,49 @@ def get_total_length(input_number):
         # re-create the string accordingly
         # return the len of the final number after looping through 40 times.
 
+    # for loop_times in range(40): # Need to a way to make it loop through this 40 times. This doesn't work.
+    for number in string_of_input_numbers:
+        print "number is: " + number
+        if number == '1':
+            copy_of_number_one += 1
+            new_number += str(copy_of_number_one) + number
 
-    if len_of_input_numbers >= 1:
-        for number in string_of_input_numbers: # Need to a way to make it loop through this 40 times.
-            print "number is: " + number
-            if number == '1':
-                string_value = '1'
-                copy_of_number_one += 1
-                if copy_of_number_one > 1:
-                    new_number += str(copy_of_number_one) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '2':
+            copy_of_number_two += 1
+            new_number += str(copy_of_number_two) + number
 
-            elif number == '2':
-                string_value = '2'
-                copy_of_number_two += 1
-                if copy_of_number_two > 1:
-                    new_number += str(copy_of_number_two) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '3':
+            copy_of_number_three += 1
+            new_number += str(copy_of_number_three) + number
 
-            elif number == '3':
-                string_value = '3'
-                copy_of_number_three += 1
-                if copy_of_number_three > 1:
-                    new_number += str(copy_of_number_three) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '4':
+            copy_of_number_four += 1
+            new_number += str(copy_of_number_four) + number
 
-            elif number == '4':
-                string_value = '4'
-                copy_of_number_four += 1
-                if copy_of_number_four > 1:
-                    new_number += str(copy_of_number_four) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '5':
+            copy_of_number_five += 1
+            new_number += str(copy_of_number_five) + number
 
-            elif number == '5':
-                string_value = '5'
-                copy_of_number_five += 1
-                if copy_of_number_five > 1:
-                    new_number += str(copy_of_number_five) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '6':
+            copy_of_number_six += 1
+            new_number += str(copy_of_number_six) + number
 
-            elif number == '6':
-                string_value = '6'
-                copy_of_number_six += 1
-                if copy_of_number_six > 1:
-                    new_number += str(copy_of_number_six) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '7':
+            copy_of_number_seven += 1
+            new_number += str(copy_of_number_seven) + number
 
-            elif number == '7':
-                string_value = '7'
-                copy_of_number_seven += 1
-                if copy_of_number_seven > 1:
-                    new_number += str(copy_of_number_seven) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '8':
+            copy_of_number_eight += 1
+            new_number += str(copy_of_number_eight) + number
 
-            elif number == '8':
-                string_value = '8'
-                copy_of_number_eight += 1
-                if copy_of_number_eight > 1:
-                    new_number += str(copy_of_number_eight) + string_value
-                else:
-                    new_number += '1' + string_value
+        elif number == '9':
+            copy_of_number_nine += 1
+            new_number += str(copy_of_number_nine) + number
+        else:
+            copy_of_number_zero += 1
+            new_number += str(copy_of_number_zero) + number
 
-            elif number == '9':
-                string_value = '9'
-                copy_of_number_nine += 1
-                if copy_of_number_nine > 1:
-                    new_number += str(copy_of_number_nine) + string_value
-                else:
-                    new_number += '1' + string_value
-            else:
-                string_value = '0'
-                copy_of_number_zero += 1
-                if copy_of_number_zero > 1:
-                    new_number += str(copy_of_number_zero) + string_value
-                else:
-                    new_number += '1' + string_value
-
+    # if loop_times == 40:
     # Note, need to return the length of the new number.
     int_new_num = int(new_number)
     print "int_new_num is: " + str(int_new_num)
@@ -156,7 +117,7 @@ def get_total_length(input_number):
 # The answer it's giving me isn't right though for some reason... oh! Need the len, not the actual number...
 # That also not the right answer for me...
 # I manually did the question answer by hand and it matches this answer... I'm not sure what's wrong...
-# Oh... this isn't looping through 40 times... that's likely why my answer is wrong.
+# Oh... this isn't looping through 40 times... that's likely why my answer is wrong based on this.
 def generate_chunks(input_string):
     chunk = ""
     for char in input_string:
@@ -181,3 +142,23 @@ def look_and_say(input_string):
     for chunk in generate_chunks(input_string):
         result += "%s%s" % (len(chunk), chunk[0])
     return result
+
+
+# This is Chris Penner's Solution
+# He's properly looping through 40 times here.
+# Answer not right yet again though...
+def look_and_say_chris(input_string):
+    inp = input_string
+    # This is a little complicated, we find a digit and capture all of its
+    # repetitions, in the second capture group we have the single digit itself
+    repeating_digits = re.compile(r'((\d)\2*)')
+
+    for i in range(0, 40):
+        new_input = ''
+        # Unpack into the total match and the single digit.
+        for match, character in repeating_digits.findall(inp):
+            new_input += str(len(match))
+            new_input += character
+        inp = new_input
+
+    return str(len(inp))
