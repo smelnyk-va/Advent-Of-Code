@@ -28,7 +28,6 @@ Starting with the digits in your puzzle input, apply this process 40 times.
 What is the length of the result?
 """
 
-
 def get_total_length(input_number):
 
     print "input_number is: " + str(input_number)
@@ -113,42 +112,12 @@ def get_total_length(input_number):
     return int_new_num
 
 
-# Grabbed from here: https://github.com/thegeneralgeneral/advent-of-code/blob/master/day10.py
-# The answer it's giving me isn't right though for some reason... oh! Need the len, not the actual number...
-# That also not the right answer for me...
-# I manually did the question answer by hand and it matches this answer... I'm not sure what's wrong...
-# Oh... this isn't looping through 40 times... that's likely why my answer is wrong based on this.
-def generate_chunks(input_string):
-    chunk = ""
-    for char in input_string:
-        # If this char is the same as the last char in the current chunk,
-        # or if chunk is empty and this is the first char,
-        if chunk and char == chunk[0]:
-            # qppend it.
-            chunk += char
-        # Otherwise, this is a new char:
-        else:
-            # yield the current chunk,
-            # start a new chunk with the new char.
-            if chunk:
-                yield chunk
-            chunk = char
-    # Yield the last chunk (we're out of chars.)
-    yield chunk
-
-
-def look_and_say(input_string):
-    result = ""
-    for chunk in generate_chunks(input_string):
-        result += "%s%s" % (len(chunk), chunk[0])
-    return result
-
+# ===================================================================================== #
 
 # This is Chris Penner's Solution
 # He's properly looping through 40 times here.
-# Answer not right yet again though...
-def look_and_say_chris(input_string):
-    inp = input_string
+def look_and_say_chris_part1(input_string):
+    current_input = input_string
     # This is a little complicated, we find a digit and capture all of its
     # repetitions, in the second capture group we have the single digit itself
     repeating_digits = re.compile(r'((\d)\2*)')
@@ -156,9 +125,28 @@ def look_and_say_chris(input_string):
     for i in range(0, 40):
         new_input = ''
         # Unpack into the total match and the single digit.
-        for match, character in repeating_digits.findall(inp):
+        for match, character in repeating_digits.findall(current_input):
             new_input += str(len(match))
             new_input += character
-        inp = new_input
+        current_input = new_input
 
-    return str(len(inp))
+    # Need to return the length of the input, not the value of the input
+    return str(len(current_input))
+
+
+def look_and_say_chris_part2(input_string):
+    current_input = input_string
+    # This is a little complicated, we find a digit and capture all of its
+    # repetitions, in the second capture group we have the single digit itself
+    repeating_digits = re.compile(r'((\d)\2*)')
+
+    for i in range(0, 50):
+        new_input = ''
+        # Unpack into the total match and the single digit.
+        for match, character in repeating_digits.findall(current_input):
+            new_input += str(len(match))
+            new_input += character
+        current_input = new_input
+
+    # Need to return the length of the input, not the value of the input
+    return str(len(current_input))

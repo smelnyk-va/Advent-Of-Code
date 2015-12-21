@@ -1,5 +1,7 @@
 --- Day 10: Elves Look, Elves Say ---
 
+--- Part One ---
+
 Today, the Elves are playing a game called look-and-say.
 They take turns making sequences by reading aloud the previous sequence and
 using that reading as the next sequence.
@@ -27,3 +29,10 @@ Your puzzle input is 3113322113.
 
 Once answer is figured out, go to: http://adventofcode.com/day/10
 And enter your answer there.
+
+--- Part Two ---
+
+Neat, right? You might also enjoy hearing John Conway talking about this sequence (that's Conway of Conway's Game of Life fame).
+
+Now, starting again with the digits in your puzzle input, apply this process 50 times. What is the length of the new result?
+
