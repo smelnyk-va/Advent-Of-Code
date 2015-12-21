@@ -52,6 +52,17 @@ def get_total_length(input_number):
     len_of_input_numbers = len(string_of_input_numbers)
     print "len_of_input_numbers is: " + str(len_of_input_numbers)
 
+    # The way I have this programmed right now will not work.
+    # I need it to basically:
+    # Will need a loop within a loop?
+        # Grab the input value (the look number)
+        # determine the say value and check value
+        # create string accordingly
+        # re-pass new value through the loop
+        # re-create the string accordingly
+        # return the len of the final number after looping through 40 times.
+
+
     if len_of_input_numbers >= 1:
         for number in string_of_input_numbers: # Need to a way to make it loop through this 40 times.
             print "number is: " + number
