@@ -40,104 +40,192 @@ What is the least amount of gold you can spend and still win the fight?
 
 """
 
-def my_rpg_game(b_health, b_attack, b_defence):
+
+# Note:
+# Perhaps do something like the santa/robo santa and check each possible combination
+# of equipment that way by adding it to the list and then checking if it's
+# there already or not
+
+
+def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
+                accessories1, accessories2):
+
+    if weapon == None:
+        has_weapon = False
+    else:
+        has_weapon = True
+
+    if armor == None:
+        has_armor = False
+    else:
+        has_armor = True
+
+    if accessories1 == None:
+        has_accessory_one = False
+    else:
+        has_accessory_one = True
+
+    if accessories2 == None:
+        has_accessory_two = False
+    else:
+        has_accessory_two = True
+
 
     player_health = 100
     player_damage = 0
-    player_defence = 0
+    player_defense = 0
     player_gold_spent = 0
-
     num_of_turns_taken = 0
-
     boss_health = b_health
     boss_damage = b_attack
-    boss_defence = b_defence
+    boss_defense = b_defence
 
-    # Decide on some weapons, armor, accessories to buy
-    # Store options are:
-    # Weapons: Dagger, Shortsword, Warhammer, Longsword, Greataxe
-    # Armor: Leather, Chainmail, Splintmail, Bandedmail, Platemail
-    # Accessories: Damage1, Damage2, Damage3, Defence1, Defence2, Defence3
-    # Need to find a way to make it loop through all the possible item combinations
-    weapon_cost, weapon_damage, weapon_armor = buy_item_from_store('Dagger')
+    # Update player stats based on equipment purchased
+    if has_weapon:
+        weapon_cost, weapon_damage, weapon_defence = buy_item_from_store(weapon)
+        # Update gold spent
+        player_gold_spent += weapon_cost
+        # Update player stats with the new weapon:
+        player_damage += weapon_damage
+        player_defense += weapon_defence
+        # print "weapon_cost is: %d " % weapon_cost
+        # print "weapon_damage is: %d " % weapon_damage
+        # print "weapon_defence is: %d " % weapon_defence
 
-    print "Dagger stats: " + str(buy_item_from_store('Dagger'))
-    print "weapon_cost is: %d " % weapon_cost
-    print "weapon_damage is: %d " % weapon_damage
-    print "weapon_armor is: %d " % weapon_armor
+    if has_armor:
+        armor_cost, armor_damage, armor_defence = buy_item_from_store(armor)
+        # Update gold spent
+        player_gold_spent += armor_cost
+        # Update player stats with the new weapon:
+        player_damage += armor_damage
+        player_defense += armor_defence
+        # print "armor_cost is: %d " % armor_cost
+        # print "armor_damage is: %d " % armor_damage
+        # print "armor_defence is: %d " % armor_defence
+
+    if has_accessory_one:
+        accessories1_cost, accessories1_damage, accessories1_defence = buy_item_from_store(accessories1)
+        # Update gold spent
+        player_gold_spent += accessories1_cost
+        # Update player stats with the new weapon:
+        player_damage += accessories1_damage
+        player_defense += accessories1_defence
+        # print "accessories1_cost is: %d " % accessories1_cost
+        # print "accessories1_damage is: %d " % accessories1_damage
+        # print "accessories1_defence is: %d " % accessories1_defence
+
+    if has_accessory_two:
+        accessories2_cost, accessories2_damage, accessories2_defence = buy_item_from_store(accessories2)
+        # Update gold spent
+        player_gold_spent += accessories2_cost
+        # Update player stats with the new weapon:
+        player_damage += accessories2_damage
+        player_defense += accessories2_defence
+        # print "accessories2_cost is: %d " % accessories2_cost
+        # print "accessories2_damage is: %d " % accessories2_damage
+        # print "accessories2_defence is: %d " % accessories2_defence
 
     # Track how much gold has been spent
-    player_gold_spent += weapon_cost
-    print "player_gold_spent is: %d" % player_gold_spent
+    # print "player_gold_spent is: %d" % player_gold_spent
 
-    #Update player stats with the new weapon:
-    player_damage = player_damage + weapon_damage
-    player_defence = player_defence + weapon_armor
-    print "player_damage is: %d " % player_damage
-    print "player_defence is: %d " % player_defence
-
-    print "boss_damage is: %d " % boss_damage
-    print "boss_defence is: %d " % boss_defence
+    # Print the players stats after purchasing equipment
+    # print "player_damage is: %d " % player_damage
+    # print "player_defense is: %d " % player_defense
+    # Print the bosses stats
+    # print "boss_damage is: %d " % boss_damage
+    # print "boss_defense is: %d " % boss_defense
 
     # Calculate the damage dealt for the turn = attacker's damage score minus the defender's armor score
-    player_damage_dealt = player_damage - boss_defence
-    print "player_damage_dealt is: %d " % player_damage_dealt
+    player_damage_dealt = player_damage - boss_defense
+    # print "player_damage_dealt is: %d " % player_damage_dealt
 
     # An attacker always does at least 1 damage.
     if player_damage_dealt <= 1:
         player_damage_dealt = 1
 
     # Calculate the boss' damage
-    boss_damage_dealt = boss_damage - player_defence
-    print "boss_damage_dealt is: %d " % boss_damage_dealt
-    print
+    boss_damage_dealt = boss_damage - player_defense
+    # print "boss_damage_dealt is: %d " % boss_damage_dealt
 
     while boss_health > 0:
         # Increment the turn counter to know how many turns have gone by
         num_of_turns_taken += 1
-        print "Turn #: %d" % num_of_turns_taken
+        # print "Turn #: %d" % num_of_turns_taken
 
         # Hit the Boss
         boss_health = boss_health - player_damage_dealt
-        print "Player dealt %d damage. " \
-              "Boss Health is at %d" % (player_damage_dealt, boss_health)
+        # print "Player dealt %d damage. " \
+        #       "Boss Health is at %d" % (player_damage_dealt, boss_health)
 
         # The Boss's turn - Player hits the boss
         player_health = player_health - boss_damage_dealt
-        print "Boss dealt %d damage. " \
-              "Player Health is at %d" % (boss_damage_dealt, player_health)
+        # print "Boss dealt %d damage. " \
+        #       "Player Health is at %d" % (boss_damage_dealt, player_health)
 
-        print
-
+        # If the Player's health goes to 0 or less before the Boss' health
+        # hits 0 health, the Boss wins!
         if player_health <= 0 and boss_health > 0:
             print "=== You have died! Please try again. ==="
-            print
-            print "Player stats were as follows: "
-            print "Player Health: %d " % player_health
-            print "Player Damage: %d " % player_damage
-            print "Player Defence: %d " % player_defence
-            print "Player Gold Spent: %d " % player_gold_spent
-            print
-            print "The Bosses Stats were as follows: "
-            print "Boss Health: %d " % boss_health
-            print "Boss Damage: %d " % boss_damage
-            print "Boss Defence: %d " % boss_defence
+            # print
+            # print "Player stats were as follows: "
+            # print "Player Health: %d " % player_health
+            # print "Player Damage: %d " % player_damage
+            # print "Player Damage Dealt: %d " % player_damage_dealt
+            # print "Player Defense: %d " % player_defense
+            # print "Player Gold Spent: %d " % player_gold_spent
+            # print
+            # print "The Bosses Stats were as follows: "
+            # print "Boss Health: %d " % boss_health
+            # print "Boss Damage: %d " % boss_damage
+            # print "Boss Defense: %d " % boss_defense
+            # print
+            # print "Number of Turns taken: %d " % num_of_turns_taken
+            # print
+            print "DEAD! Player died in %d turns with %d health left. Boss has %d health " \
+                  "remaining. Player does %d damage, boss does %d damage. " \
+                  "Gold spent %d. " % \
+                  (num_of_turns_taken, player_health, boss_health,
+                   player_damage_dealt, boss_damage, player_gold_spent)
             print
             return player_gold_spent
 
+        # If the player and boss die on the same turn, the player is considered the
+        # winner since the player attacks first
+        elif player_health < 0 and boss_health < 0:
+            print "=== You have won! Woot! ==="
+            print "!WINS! Player wins in %d turns with %d health left. Boss has %d health " \
+                  "remaining. Player does %d damage, boss does %d damage. " \
+                  "Gold spent %d. " % \
+                  (num_of_turns_taken, player_health, boss_health,
+                   player_damage_dealt, boss_damage, player_gold_spent)
+            print
+            return player_gold_spent
+
+        # If the Boss's health goes to 0 or less before the Player's health
+        # hits 0 health, the Player wins!
         elif player_health > 0 and boss_health <= 0:
             print "=== You have won! Woot! ==="
-            print
-            print "Player stats were as follows: "
-            print "Player Health: %d " % player_health
-            print "Player Damage: %d " % player_damage
-            print "Player Defence: %d " % player_defence
-            print "Player Gold Spent: %d " % player_gold_spent
-            print
-            print "The Bosses Stats were as follows: "
-            print "Boss Health: %d " % boss_health
-            print "Boss Damage: %d " % boss_damage
-            print "Boss Defence: %d " % boss_defence
+            # print
+            # print "Player stats were as follows: "
+            # print "Player Health: %d " % player_health
+            # print "Player Damage: %d " % player_damage
+            # print "Player Damage Dealt: %d " % player_damage_dealt
+            # print "Player Defense: %d " % player_defense
+            # print "Player Gold Spent: %d " % player_gold_spent
+            # print
+            # print "The Bosses Stats were as follows: "
+            # print "Boss Health: %d " % boss_health
+            # print "Boss Damage: %d " % boss_damage
+            # print "Boss Defense: %d " % boss_defense
+            # print
+            # print "Number of Turns taken: %d " % num_of_turns_taken
+            # print
+            # print "Weapon used: %s. Armor used: %s. Accessory 1 used: %s. Accessory 2 used: %s." %
+            print "!WINS! Player wins in %d turns with %d health left. Boss has %d health " \
+                  "remaining. Player does %d damage, boss does %d damage. " \
+                  "Gold spent %d. " % \
+                  (num_of_turns_taken, player_health, boss_health,
+                   player_damage_dealt, boss_damage, player_gold_spent)
             print
             return player_gold_spent
 
@@ -177,10 +265,10 @@ def buy_item_from_store(item_name):
         return longsword_cost, longsword_attack, longsword_armor
 
     elif item_name == 'Greataxe':
-        longsword_cost = 74
-        longsword_attack = 8
-        longsword_armor = 0
-        return longsword_cost, longsword_attack, longsword_armor
+        greataxe_cost = 74
+        greataxe_attack = 8
+        greataxe_armor = 0
+        return greataxe_cost, greataxe_attack, greataxe_armor
 
     # Armor:      Cost  Damage  Armor
     # Leather      13     0       1
@@ -245,21 +333,21 @@ def buy_item_from_store(item_name):
         damage3_armor = 0
         return damage3_cost, damage3_attack, damage3_armor
 
-    elif item_name == 'Defence1':
-        defence1_cost = 20
-        defence1_attack = 0
-        defence1_armor = 1
-        return defence1_cost, defence1_attack, defence1_armor
+    elif item_name == 'Defense1':
+        defense1_cost = 20
+        defense1_attack = 0
+        defense1_armor = 1
+        return defense1_cost, defense1_attack, defense1_armor
 
-    elif item_name == 'Defence2':
-        defence2_cost = 40
-        defence2_armor_attack = 0
-        defence2_armor = 2
-        return defence2_cost, defence2_armor_attack, defence2_armor
+    elif item_name == 'Defense2':
+        defense2_cost = 40
+        defense2_armor_attack = 0
+        defense2_armor = 2
+        return defense2_cost, defense2_armor_attack, defense2_armor
 
-    elif item_name == 'Defence3':
-        defence3_cost = 80
-        defence3_attack = 0
-        defence3_armor = 3
-        return defence3_cost, defence3_attack, defence3_armor
+    elif item_name == 'Defense3':
+        defense3_cost = 80
+        defense3_attack = 0
+        defense3_armor = 3
+        return defense3_cost, defense3_attack, defense3_armor
 
