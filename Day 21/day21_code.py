@@ -70,7 +70,6 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
     else:
         has_accessory_two = True
 
-
     player_health = 100
     player_damage = 0
     player_defense = 0
@@ -88,52 +87,33 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # Update player stats with the new weapon:
         player_damage += weapon_damage
         player_defense += weapon_defence
-        # print "weapon_cost is: %d " % weapon_cost
-        # print "weapon_damage is: %d " % weapon_damage
-        # print "weapon_defence is: %d " % weapon_defence
 
     if has_armor:
         armor_cost, armor_damage, armor_defence = buy_item_from_store(armor)
         # Update gold spent
         player_gold_spent += armor_cost
-        # Update player stats with the new weapon:
+        # Update player stats with the new armor
         player_damage += armor_damage
         player_defense += armor_defence
-        # print "armor_cost is: %d " % armor_cost
-        # print "armor_damage is: %d " % armor_damage
-        # print "armor_defence is: %d " % armor_defence
 
     if has_accessory_one:
         accessories1_cost, accessories1_damage, accessories1_defence = buy_item_from_store(accessories1)
         # Update gold spent
         player_gold_spent += accessories1_cost
-        # Update player stats with the new weapon:
+        # Update player stats with the new accessory
         player_damage += accessories1_damage
         player_defense += accessories1_defence
-        # print "accessories1_cost is: %d " % accessories1_cost
-        # print "accessories1_damage is: %d " % accessories1_damage
-        # print "accessories1_defence is: %d " % accessories1_defence
 
     if has_accessory_two:
         accessories2_cost, accessories2_damage, accessories2_defence = buy_item_from_store(accessories2)
         # Update gold spent
         player_gold_spent += accessories2_cost
-        # Update player stats with the new weapon:
+        # Update player stats with the new accessory
         player_damage += accessories2_damage
         player_defense += accessories2_defence
-        # print "accessories2_cost is: %d " % accessories2_cost
-        # print "accessories2_damage is: %d " % accessories2_damage
-        # print "accessories2_defence is: %d " % accessories2_defence
 
     # Track how much gold has been spent
     # print "player_gold_spent is: %d" % player_gold_spent
-
-    # Print the players stats after purchasing equipment
-    # print "player_damage is: %d " % player_damage
-    # print "player_defense is: %d " % player_defense
-    # Print the bosses stats
-    # print "boss_damage is: %d " % boss_damage
-    # print "boss_defense is: %d " % boss_defense
 
     # Calculate the damage dealt for the turn = attacker's damage score minus the defender's armor score
     player_damage_dealt = player_damage - boss_defense
@@ -150,7 +130,6 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
     while boss_health > 0:
         # Increment the turn counter to know how many turns have gone by
         num_of_turns_taken += 1
-        # print "Turn #: %d" % num_of_turns_taken
 
         # Hit the Boss
         boss_health = boss_health - player_damage_dealt
@@ -166,21 +145,6 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # hits 0 health, the Boss wins!
         if player_health <= 0 and boss_health > 0:
             print "=== You have died! Please try again. ==="
-            # print
-            # print "Player stats were as follows: "
-            # print "Player Health: %d " % player_health
-            # print "Player Damage: %d " % player_damage
-            # print "Player Damage Dealt: %d " % player_damage_dealt
-            # print "Player Defense: %d " % player_defense
-            # print "Player Gold Spent: %d " % player_gold_spent
-            # print
-            # print "The Bosses Stats were as follows: "
-            # print "Boss Health: %d " % boss_health
-            # print "Boss Damage: %d " % boss_damage
-            # print "Boss Defense: %d " % boss_defense
-            # print
-            # print "Number of Turns taken: %d " % num_of_turns_taken
-            # print
             print "DEAD! Player died in %d turns with %d health left. Boss has %d health " \
                   "remaining. Player does %d damage, boss does %d damage. " \
                   "Gold spent %d. " % \
@@ -205,22 +169,6 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # hits 0 health, the Player wins!
         elif player_health > 0 and boss_health <= 0:
             print "=== You have won! Woot! ==="
-            # print
-            # print "Player stats were as follows: "
-            # print "Player Health: %d " % player_health
-            # print "Player Damage: %d " % player_damage
-            # print "Player Damage Dealt: %d " % player_damage_dealt
-            # print "Player Defense: %d " % player_defense
-            # print "Player Gold Spent: %d " % player_gold_spent
-            # print
-            # print "The Bosses Stats were as follows: "
-            # print "Boss Health: %d " % boss_health
-            # print "Boss Damage: %d " % boss_damage
-            # print "Boss Defense: %d " % boss_defense
-            # print
-            # print "Number of Turns taken: %d " % num_of_turns_taken
-            # print
-            # print "Weapon used: %s. Armor used: %s. Accessory 1 used: %s. Accessory 2 used: %s." %
             print "!WINS! Player wins in %d turns with %d health left. Boss has %d health " \
                   "remaining. Player does %d damage, boss does %d damage. " \
                   "Gold spent %d. " % \
