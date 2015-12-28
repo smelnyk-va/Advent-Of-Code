@@ -35,6 +35,7 @@ The player deals 5-2 = 3 damage; the boss goes down to 0 hit points.
 In this scenario, the player wins! (Barely.)
 
 You have 100 hit points. The boss's actual stats are in your puzzle input.
+
 What is the least amount of gold you can spend and still win the fight?
 
 """
@@ -44,7 +45,6 @@ def my_rpg_game(b_health, b_attack, b_defence):
     player_health = 100
     player_damage = 0
     player_defence = 0
-    player_gold = 1000
     player_gold_spent = 0
 
     num_of_turns_taken = 0
@@ -52,64 +52,94 @@ def my_rpg_game(b_health, b_attack, b_defence):
     boss_health = b_health
     boss_damage = b_attack
     boss_defence = b_defence
-    boss_damage_dealt = 0
+
+    # Decide on some weapons, armor, accessories to buy
+    # Store options are:
+    # Weapons: Dagger, Shortsword, Warhammer, Longsword, Greataxe
+    # Armor: Leather, Chainmail, Splintmail, Bandedmail, Platemail
+    # Accessories: Damage1, Damage2, Damage3, Defence1, Defence2, Defence3
+    # Need to find a way to make it loop through all the possible item combinations
+    weapon_cost, weapon_damage, weapon_armor = buy_item_from_store('Dagger')
+
+    print "Dagger stats: " + str(buy_item_from_store('Dagger'))
+    print "weapon_cost is: %d " % weapon_cost
+    print "weapon_damage is: %d " % weapon_damage
+    print "weapon_armor is: %d " % weapon_armor
+
+    # Track how much gold has been spent
+    player_gold_spent += weapon_cost
+    print "player_gold_spent is: %d" % player_gold_spent
+
+    #Update player stats with the new weapon:
+    player_damage = player_damage + weapon_damage
+    player_defence = player_defence + weapon_armor
+    print "player_damage is: %d " % player_damage
+    print "player_defence is: %d " % player_defence
+
+    print "boss_damage is: %d " % boss_damage
+    print "boss_defence is: %d " % boss_defence
+
+    # Calculate the damage dealt for the turn = attacker's damage score minus the defender's armor score
+    player_damage_dealt = player_damage - boss_defence
+    print "player_damage_dealt is: %d " % player_damage_dealt
+
+    # An attacker always does at least 1 damage.
+    if player_damage_dealt <= 1:
+        player_damage_dealt = 1
+
+    # Calculate the boss' damage
+    boss_damage_dealt = boss_damage - player_defence
+    print "boss_damage_dealt is: %d " % boss_damage_dealt
+    print
 
     while boss_health > 0:
         # Increment the turn counter to know how many turns have gone by
         num_of_turns_taken += 1
+        print "Turn #: %d" % num_of_turns_taken
 
-        #decide on some weapons, armor, accessories to buy
-        weapon_cost, weapon_damage, weapon_armor = buy_item_from_store('Dagger')
-
-        # Check whether the player can afford the weapon or not
-        if player_gold - weapon_cost >= 0:
-            player_gold = player_gold - weapon_cost
-
-            #Update player stats with the new weapon:
-            player_damage = player_damage + weapon_damage
-            player_defence = player_defence + weapon_armor
-        else:
-            print "Could not afford the weapon. Please earn more gold or sell some items."
-
-        # Calculate the damage dealt for the turn = attacker's damage score minus the defender's armor score
-        player_damage_dealt = player_damage - boss_defence
-
-        # An attacker always does at least 1 damage.
-        if player_damage_dealt < 1:
-            player_damage_dealt = 1
-
-        # Now that damage is calculate, hit the boss
+        # Hit the Boss
         boss_health = boss_health - player_damage_dealt
+        print "Player dealt %d damage. " \
+              "Boss Health is at %d" % (player_damage_dealt, boss_health)
 
-        # Calculate the boss' damage
-        boss_damage_dealt = boss_damage - player_defence
-
-        # hit the player back
+        # The Boss's turn - Player hits the boss
         player_health = player_health - boss_damage_dealt
+        print "Boss dealt %d damage. " \
+              "Player Health is at %d" % (boss_damage_dealt, player_health)
+
+        print
 
         if player_health <= 0 and boss_health > 0:
-            print "You have died! Please try again. Your stats were as follows: "
+            print "=== You have died! Please try again. ==="
+            print
+            print "Player stats were as follows: "
             print "Player Health: %d " % player_health
             print "Player Damage: %d " % player_damage
             print "Player Defence: %d " % player_defence
-            print "Player Gold: %d " % player_gold
-            print "You have died! Please try again. The Bosses Stats were as follows: "
+            print "Player Gold Spent: %d " % player_gold_spent
+            print
+            print "The Bosses Stats were as follows: "
             print "Boss Health: %d " % boss_health
             print "Boss Damage: %d " % boss_damage
             print "Boss Defence: %d " % boss_defence
-            return player_health
+            print
+            return player_gold_spent
 
         elif player_health > 0 and boss_health <= 0:
-            print "You have won! Woot! Your stats were as follows: "
+            print "=== You have won! Woot! ==="
+            print
+            print "Player stats were as follows: "
             print "Player Health: %d " % player_health
             print "Player Damage: %d " % player_damage
             print "Player Defence: %d " % player_defence
-            print "Player Gold: %d " % player_gold
-            print "You have won! Woot! The Bosses Stats were as follows: "
+            print "Player Gold Spent: %d " % player_gold_spent
+            print
+            print "The Bosses Stats were as follows: "
             print "Boss Health: %d " % boss_health
             print "Boss Damage: %d " % boss_damage
             print "Boss Defence: %d " % boss_defence
-            return player_health
+            print
+            return player_gold_spent
 
 
 # Here is what the item shop is selling:

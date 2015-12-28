@@ -11,4 +11,4 @@ class Day21Part1Tests(unittest.TestCase):
         boss_armor = 2
 
         result = my_rpg_game(boss_health, boss_damage, boss_armor)
-        print "Winner is: " + str(result)
+        print "Gold spent: " + str(result)
