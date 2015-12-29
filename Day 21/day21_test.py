@@ -1443,6 +1443,20 @@ class Day21Part1Tests(unittest.TestCase):
         # !WINS! Player wins in 12 turns with 52 health left. Boss has -5 health remaining.
         # Player does 9 damage, boss does 9 damage. Gold spent 276.
 
+    def test_using_a_Longsword_and_ChainmailArmor_and_Damage2Ring_PART1SOLUTION(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Longsword'
+        armor_name = 'Chainmail'
+        accessories1_name = 'Damage2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(121, result)
+        # !WINS! Player wins in 15 turns with -5 health left. Boss has -2 health remaining.
+        # Player does 7 damage, boss does 9 damage. Gold spent 121.
+
     """ Weapon + Armor + 2 Rings Combos """
 
     def test_using_a_Dagger_and_LeatherArmor_and_one_of_each_1_Rings_DEAD(self):
