@@ -1,6 +1,28 @@
+import lib
+
 __author__ = 'smelnyk'
 
 
+def proper_way_to_solve_part_one():
+    best_player = {'Cost': float("inf")}
+    for player in lib.all_players():
+        if lib.player_wins(player, lib.get_enemy()):
+            if player['Cost'] < best_player['Cost']:
+                best_player = player
+
+    print "Least Gold spent and wins is: " + str((best_player['Cost']))
+    return best_player['Cost']
+
+
+def proper_way_to_solve_part_two():
+    best_player = {'Cost': float("-inf")}
+    for player in lib.all_players():
+        if not lib.player_wins(player, lib.get_enemy()):
+            if player['Cost'] > best_player['Cost']:
+                best_player = player
+
+    print "Most Gold Spent and still dies is: " + str((best_player['Cost']))
+    return best_player['Cost']
 
 
 def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,

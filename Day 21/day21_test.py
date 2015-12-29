@@ -1,7 +1,21 @@
 __author__ = 'smelnyk'
 
 import unittest
-from day21_code import my_rpg_game
+from day21_code import my_rpg_game, proper_way_to_solve_part_one, \
+    proper_way_to_solve_part_two
+
+
+class Day21Part1ProperWayToSolvePart1Tests(unittest.TestCase):
+
+    def test_solve_day_21_part_1(self):
+        result = proper_way_to_solve_part_one()
+        # print "Answer to Part 1 is: %s " % result  # 121
+        self.assertEqual(121, result)
+
+    def test_solve_day_21_part_2(self):
+        result = proper_way_to_solve_part_two()
+        # print "Answer to Part 2 is: %s " % result  # 201
+        self.assertEqual(201, result)
 
 
 class Day21Part1Tests(unittest.TestCase):
