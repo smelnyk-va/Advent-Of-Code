@@ -103,7 +103,7 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # If the Player's health goes to 0 or less before the Boss' health
         # hits 0 health, the Boss wins!
         if player_health <= 0 and boss_health > 0:
-            print "=== You have died! Please try again. ==="
+            print "=== GAME OVER!! YOU DIED! ==="
             print "DEAD! Player died in %d turns with %d health left. Boss has %d health " \
                   "remaining. Player does %d damage, boss does %d damage. " \
                   "Gold spent %d. " % \
@@ -115,7 +115,7 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # If the player and boss die on the same turn, the player is considered the
         # winner since the player attacks first
         elif player_health < 0 and boss_health < 0:
-            print "=== You have won! Woot! ==="
+            print "=== SUCCESS!! ==="
             print "!WINS! Player wins in %d turns with %d health left. Boss has %d health " \
                   "remaining. Player does %d damage, boss does %d damage. " \
                   "Gold spent %d. " % \
@@ -127,7 +127,7 @@ def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
         # If the Boss's health goes to 0 or less before the Player's health
         # hits 0 health, the Player wins!
         elif player_health > 0 and boss_health <= 0:
-            print "=== You have won! Woot! ==="
+            print "=== SUCCESS!! ==="
             print "!WINS! Player wins in %d turns with %d health left. Boss has %d health " \
                   "remaining. Player does %d damage, boss does %d damage. " \
                   "Gold spent %d. " % \

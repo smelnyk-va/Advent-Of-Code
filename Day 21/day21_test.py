@@ -800,6 +800,215 @@ class Day21Part1Tests(unittest.TestCase):
 
     """ Weapons + 1 defense ring """
 
+    def test_using_a_Dagger_and_Defense1Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Dagger'
+        armor_name = None
+        accessories1_name = 'Defense1'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(28, result)
+        # DEAD! Player died in 13 turns with -4 health left. Boss has 77 health remaining.
+        # Player does 2 damage, boss does 9 damage. Gold spent 28.
+
+    def test_using_a_Dagger_and_Defense2Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Dagger'
+        armor_name = None
+        accessories1_name = 'Defense2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(48, result)
+        # DEAD! Player died in 15 turns with -5 health left. Boss has 73 health remaining.
+        # Player does 2 damage, boss does 9 damage. Gold spent 48.
+
+    def test_using_a_Dagger_and_Defense3Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Dagger'
+        armor_name = None
+        accessories1_name = 'Defense3'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(88, result)
+        # DEAD! Player died in 17 turns with -2 health left. Boss has 69 health remaining.
+        # Player does 2 damage, boss does 9 damage. Gold spent 88.
+
+    def test_using_a_Shortsword_and_Defense1Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Shortsword'
+        armor_name = None
+        accessories1_name = 'Defense1'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(30, result)
+        # DEAD! Player died in 13 turns with -4 health left. Boss has 64 health remaining.
+        # Player does 3 damage, boss does 9 damage. Gold spent 30.
+
+    def test_using_a_Shortsword_and_Defense2Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Shortsword'
+        armor_name = None
+        accessories1_name = 'Defense2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(50, result)
+        # DEAD! Player died in 15 turns with -5 health left. Boss has 58 health remaining.
+        # Player does 3 damage, boss does 9 damage. Gold spent 50.
+
+    def test_using_a_Shortsword_and_Defense3Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Shortsword'
+        armor_name = None
+        accessories1_name = 'Defense3'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(90, result)
+        # DEAD! Player died in 17 turns with -2 health left. Boss has 52 health remaining.
+        # Player does 3 damage, boss does 9 damage. Gold spent 90.
+
+    def test_using_a_Warhammer_and_Defense1Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Warhammer'
+        armor_name = None
+        accessories1_name = 'Defense1'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(45, result)
+        # DEAD! Player died in 13 turns with -4 health left. Boss has 51 health remaining.
+        # Player does 4 damage, boss does 9 damage. Gold spent 45.
+
+    def test_using_a_Warhammer_and_Defense2Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Warhammer'
+        armor_name = None
+        accessories1_name = 'Defense2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(65, result)
+        # DEAD! Player died in 15 turns with -5 health left. Boss has 43 health remaining.
+        # Player does 4 damage, boss does 9 damage. Gold spent 65.
+
+    def test_using_a_Warhammer_and_Defense3Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Warhammer'
+        armor_name = None
+        accessories1_name = 'Defense3'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(105, result)
+        # DEAD! Player died in 17 turns with -2 health left. Boss has 35 health remaining.
+        # Player does 4 damage, boss does 9 damage. Gold spent 105.
+
+    def test_using_a_Longsword_and_Defense1Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Longsword'
+        armor_name = None
+        accessories1_name = 'Defense1'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(60, result)
+        # DEAD! Player died in 13 turns with -4 health left. Boss has 38 health remaining.
+        # Player does 5 damage, boss does 9 damage. Gold spent 60.
+
+    def test_using_a_Longsword_and_Defense2Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Longsword'
+        armor_name = None
+        accessories1_name = 'Defense2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(80, result)
+        # DEAD! Player died in 15 turns with -5 health left. Boss has 28 health remaining.
+        # Player does 5 damage, boss does 9 damage. Gold spent 80.
+
+    def test_using_a_Longsword_and_Defense3Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Longsword'
+        armor_name = None
+        accessories1_name = 'Defense3'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(120, result)
+        # DEAD! Player died in 17 turns with -2 health left. Boss has 18 health remaining.
+        # Player does 5 damage, boss does 9 damage. Gold spent 120.
+
+    def test_using_a_Greataxe_and_Defense1Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Greataxe'
+        armor_name = None
+        accessories1_name = 'Defense1'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(94, result)
+        # DEAD! Player died in 13 turns with -4 health left. Boss has 25 health remaining.
+        # Player does 6 damage, boss does 9 damage. Gold spent 94.
+
+    def test_using_a_Greataxe_and_Defense2Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Greataxe'
+        armor_name = None
+        accessories1_name = 'Defense2'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(114, result)
+        # DEAD! Player died in 15 turns with -5 health left. Boss has 13 health remaining.
+        # Player does 6 damage, boss does 9 damage. Gold spent 114.
+
+    def test_using_a_Greataxe_and_Defense3Ring_DEAD(self):
+        boss_health = 103
+        boss_damage = 9
+        boss_armor = 2
+        weapon_name = 'Greataxe'
+        armor_name = None
+        accessories1_name = 'Defense3'
+        accessories2_name = None
+        result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
+                             armor_name, accessories1_name, accessories2_name)
+        self.assertEqual(154, result)
+        # DEAD! Player died in 17 turns with -2 health left. Boss has 1 health remaining.
+        # Player does 6 damage, boss does 9 damage. Gold spent 154.
 
     """ Armor + 1 Damage rings """
 
