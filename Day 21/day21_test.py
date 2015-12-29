@@ -1453,7 +1453,7 @@ class Day21Part1Tests(unittest.TestCase):
         accessories2_name = None
         result = my_rpg_game(boss_health, boss_damage, boss_armor, weapon_name,
                              armor_name, accessories1_name, accessories2_name)
-        self.assertEqual(121, result)
+        self.assertEqual(121, result)  # Solution is 121
         # !WINS! Player wins in 15 turns with -5 health left. Boss has -2 health remaining.
         # Player does 7 damage, boss does 9 damage. Gold spent 121.
 

@@ -1,9 +1,6 @@
 __author__ = 'smelnyk'
 
-# Note:
-# Perhaps do something like the santa/robo santa and check each possible combination
-# of equipment that way by adding it to the list and then checking if it's
-# there already or not
+
 
 
 def my_rpg_game(b_health, b_attack, b_defence, weapon, armor,
