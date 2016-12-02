@@ -8,7 +8,7 @@ class WizardSimulator20XX:
         self.boss_damage = 9  # from input file
         self.active_spells = active_spells
         self.player_spellbook = {
-            'magic_missle':
+            'magic_missile':
                 {
                     'mana_cost': 53, 'is_an_effect': False, 'turn_duration': 1,
                     'damage': 4,     'heals_player': 0,     'mana_regen': 0,
@@ -39,6 +39,11 @@ class WizardSimulator20XX:
                     'armor_boost': 0,
                 }
         }
+
+    def play_game(self):
+
+        turn = 0;
+
 
     # player turn
 
