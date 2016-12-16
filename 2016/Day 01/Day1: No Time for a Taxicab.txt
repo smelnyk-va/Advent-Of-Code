@@ -22,28 +22,8 @@ destination. Given that you can only walk on the street grid of the city, how fa
 destination?
 
 For example:
+    Following R2, L3 leaves you 2 blocks East and 3 blocks North, or 5 blocks away.
+    R2, R2, R2 leaves you 2 blocks due South of your starting position, which is 2 blocks away.
+    R5, L5, R5, R3 leaves you 12 blocks away.
 
-Following R2, L3 leaves you 2 blocks East and 3 blocks North, or 5 blocks away.
-R2, R2, R2 leaves you 2 blocks due South of your starting position, which is 2 blocks away.
-R5, L5, R5, R3 leaves you 12 blocks away.
 How many blocks away is Easter Bunny HQ?
-
-
-
---- Part Two ---
-
-Now, given the same instructions, find the position of the first character that causes him to enter the
-basement (floor -1). The first character in the instructions has position 1, the second character has
-position 2, and so on.
-
-For example:
-
-) causes him to enter the basement at character position 1.
-()()) causes him to enter the basement at character position 5.
-What is the position of the character that causes Santa to first enter the basement?
-
-Once answer is figured out, go to: http://adventofcode.com/day/1
-And enter your answer there.
-
-NOTE: You will only be able to see and submit Part Two once you have submitted the correct answer
-for part 1.
