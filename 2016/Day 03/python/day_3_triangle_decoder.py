@@ -6,7 +6,7 @@ import re
 class TriangleDecoder():
 
     @staticmethod
-    def check_if_triangle(side1, side2, side3):
+    def check_if_triangle_part_1(side1, side2, side3):
 
         if side1 + side2 > side3 and side2 + side3 > side1 and side3 + side1 > side2:
             return True
@@ -44,8 +44,16 @@ class TriangleDecoder():
             side3_int = int(side3)
 
             # check if a valid triangle
-            if TriangleDecoder.check_if_triangle(side1_int, side2_int, side3_int):
+            if TriangleDecoder.check_if_triangle_part_1(side1_int, side2_int, side3_int):
                 total_valid_triangles += 1
 
         print "Total Number of Valid Triangles from given input: %d" % total_valid_triangles
         return total_valid_triangles
+
+    @staticmethod
+    def check_if_triangle_part_2(side1, side2, side3):
+        pass
+
+    @staticmethod
+    def try_to_solve_day_3_part_2():
+        pass

@@ -11,12 +11,12 @@ class TriangleDecoderPart1Tests(unittest.TestCase):
 
     def test_should_return_false_for_given_values_5_10_25_as_they_do_not_make_a_valid_triangle(self):
         expected = False
-        actual = TriangleDecoder.check_if_triangle(5, 10, 25)
+        actual = TriangleDecoder.check_if_triangle_part_1(5, 10, 25)
         self.assertEquals(expected, actual)
 
     def test_should_return_true(self):
         expected = True
-        actual = TriangleDecoder.check_if_triangle(566, 477, 376)
+        actual = TriangleDecoder.check_if_triangle_part_1(566, 477, 376)
         self.assertEquals(expected, actual)
 
     def test_should_read_input_file(self):
@@ -29,3 +29,8 @@ class TriangleDecoderPart2Tests(unittest.TestCase):
 
     def setUp(self):
         super(TriangleDecoderPart2Tests, self).setUp()
+
+    def test_should_return_true_for_given_values(self):
+        expected = True
+        actual = TriangleDecoder.check_if_triangle_part_2(101, 102, 103)
+        self.assertEquals(expected, actual)
