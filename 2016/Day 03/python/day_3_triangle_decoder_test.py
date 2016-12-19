@@ -4,10 +4,10 @@ import unittest
 from day_3_triangle_decoder import TriangleDecoder
 
 
-class TriangleDecoderTests(unittest.TestCase):
+class TriangleDecoderPart1Tests(unittest.TestCase):
 
     def setUp(self):
-        super(TriangleDecoderTests, self).setUp()
+        super(TriangleDecoderPart1Tests, self).setUp()
 
     def test_should_return_false_for_given_values_5_10_25_as_they_do_not_make_a_valid_triangle(self):
         expected = False
@@ -28,3 +28,9 @@ class TriangleDecoderTests(unittest.TestCase):
         actual = TriangleDecoder.try_to_solve_day_3_part_1()
         expected = 1050  # Ran the test to get the number and then updated the expected
         self.assertEquals(expected, actual)
+
+
+class TriangleDecoderPart2Tests(unittest.TestCase):
+
+    def setUp(self):
+        super(TriangleDecoderPart2Tests, self).setUp()
