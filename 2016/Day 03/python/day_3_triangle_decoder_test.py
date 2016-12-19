@@ -14,11 +14,6 @@ class TriangleDecoderPart1Tests(unittest.TestCase):
         actual = TriangleDecoder.check_if_triangle(5, 10, 25)
         self.assertEquals(expected, actual)
 
-    def test_should_return_true_for_given_values_1_5_2_as_this_is_a_valid_triangle(self):
-        expected = True
-        actual = TriangleDecoder.check_if_triangle(1, 5, 2)
-        self.assertEquals(expected, actual)
-
     def test_should_return_true(self):
         expected = True
         actual = TriangleDecoder.check_if_triangle(566, 477, 376)
