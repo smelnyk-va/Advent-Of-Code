@@ -30,7 +30,27 @@ class TriangleDecoderPart2Tests(unittest.TestCase):
     def setUp(self):
         super(TriangleDecoderPart2Tests, self).setUp()
 
-    def test_should_return_true_for_given_values(self):
+    def test_should_return_true_for_given_values_start_with_same_number(self):
         expected = True
         actual = TriangleDecoder.check_if_triangle_part_2(101, 102, 103)
+        self.assertEquals(expected, actual)
+
+    def test_should_return_false_for_if_given_values_do_not_start_with_same_number(self):
+        expected = False
+        actual = TriangleDecoder.check_if_triangle_part_2(201, 102, 103)
+        self.assertEquals(expected, actual)
+
+    def test_should_return_false_for_if_given_values_do_not_start_with_same_number(self):
+        expected = False
+        actual = TriangleDecoder.check_if_triangle_part_2(11, 102, 203)
+        self.assertEquals(expected, actual)
+
+    def test_should_return_false_for_if_given_values_do_not_start_with_same_number(self):
+        expected = False
+        actual = TriangleDecoder.check_if_triangle_part_2(11, 7, 222)
+        self.assertEquals(expected, actual)
+
+    def test_should_read_input_file(self):
+        actual = TriangleDecoder.try_to_solve_day_3_part_2()
+        expected = 0  # Ran the test to get the number and then updated the expected
         self.assertEquals(expected, actual)
