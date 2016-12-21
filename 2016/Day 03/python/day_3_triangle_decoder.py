@@ -57,7 +57,9 @@ class TriangleDecoder():
         side2_str = str(side2)
         side3_str = str(side3)
 
-        if side1_str[0] == side2_str[0] and side1_str[0] == side3_str[0] and side2_str[0] == side3_str[0]:
+        # if side1_str[0] == side2_str[0] and side1_str[0] == side3_str[0] and side2_str[0] == side3_str[0]:
+        #     return True
+        if len(side1_str) == len(side2_str) and len(side1_str) == len(side3_str) and len(side2_str) == len(side3_str):
             return True
         else:
             return False
@@ -106,24 +108,27 @@ class TriangleDecoder():
                 three_values_reached_total += 1
 
                 if three_values_reached_total == 3:
+
                     if TriangleDecoder.check_if_triangle_part_2(list_one_three_sides_to_compare[0],
                                                                 list_one_three_sides_to_compare[1],
                                                                 list_one_three_sides_to_compare[2]):
-                        # check if current three sides are a valid triangle and if so, increment counter
-                        total_valid_triangles += 1
+                        if TriangleDecoder.check_if_triangle_part_1(list_one_three_sides_to_compare[0],
+                                                                    list_one_three_sides_to_compare[1],
+                                                                    list_one_three_sides_to_compare[2]):
+                            # check if current three sides are a valid triangle and if so, increment counter
+                            total_valid_triangles += 1
 
-                        # reset the loop so it checks the next three items
-                        three_values_reached_total = 0
+                            # reset the loop so it checks the next three items
+                            three_values_reached_total = 0
 
-                        # remove the current three sides to have a blank list again:
-                        list_one_three_sides_to_compare.pop()
-                        list_one_three_sides_to_compare.pop()
-                        list_one_three_sides_to_compare.pop()
+                            # remove the current three sides to have a blank list again:
+                            list_one_three_sides_to_compare = []
+                        else:
+                            # remove the current three sides to have a blank list again:
+                            list_one_three_sides_to_compare = []
                     else:
                         # remove the current three sides to have a blank list again:
-                        list_one_three_sides_to_compare.pop()
-                        list_one_three_sides_to_compare.pop()
-                        list_one_three_sides_to_compare.pop()
+                        list_one_three_sides_to_compare = []
 
             # we're done the list so we need to stop the loop
             three_values_reached_list_one = True
@@ -141,21 +146,23 @@ class TriangleDecoder():
                     if TriangleDecoder.check_if_triangle_part_2(list_two_three_sides_to_compare[0],
                                                                 list_two_three_sides_to_compare[1],
                                                                 list_two_three_sides_to_compare[2]):
-                        # check if current three sides are a valid triangle and if so, increment counter
-                        total_valid_triangles += 1
+                        if TriangleDecoder.check_if_triangle_part_1(list_two_three_sides_to_compare[0],
+                                                                    list_two_three_sides_to_compare[1],
+                                                                    list_two_three_sides_to_compare[2]):
+                            # check if current three sides are a valid triangle and if so, increment counter
+                            total_valid_triangles += 1
 
-                        # reset the loop so it checks the next three items
-                        three_values_reached_total = 0
+                            # reset the loop so it checks the next three items
+                            three_values_reached_total = 0
 
-                        # remove the current three sides to have a blank list again:
-                        list_two_three_sides_to_compare.pop()
-                        list_two_three_sides_to_compare.pop()
-                        list_two_three_sides_to_compare.pop()
+                            # remove the current three sides to have a blank list again:
+                            list_two_three_sides_to_compare = []
+                        else:
+                            # remove the current three sides to have a blank list again:
+                            list_two_three_sides_to_compare = []
                     else:
                         # remove the current three sides to have a blank list again:
-                        list_two_three_sides_to_compare.pop()
-                        list_two_three_sides_to_compare.pop()
-                        list_two_three_sides_to_compare.pop()
+                        list_two_three_sides_to_compare = []
 
             # we're done the list so we need to stop the loop
             three_values_reached_list_two = True
@@ -173,21 +180,23 @@ class TriangleDecoder():
                     if TriangleDecoder.check_if_triangle_part_2(list_three_three_sides_to_compare[0],
                                                                 list_three_three_sides_to_compare[1],
                                                                 list_three_three_sides_to_compare[2]):
-                        # check if current three sides are a valid triangle and if so, increment counter
-                        total_valid_triangles += 1
+                        if TriangleDecoder.check_if_triangle_part_1(list_three_three_sides_to_compare[0],
+                                                                    list_three_three_sides_to_compare[1],
+                                                                    list_three_three_sides_to_compare[2]):
+                            # check if current three sides are a valid triangle and if so, increment counter
+                            total_valid_triangles += 1
 
-                        # reset the loop so it checks the next three items
-                        three_values_reached_total = 0
+                            # reset the loop so it checks the next three items
+                            three_values_reached_total = 0
 
-                        # remove the current three sides to have a blank list again:
-                        list_three_three_sides_to_compare.pop()
-                        list_three_three_sides_to_compare.pop()
-                        list_three_three_sides_to_compare.pop()
+                            # remove the current three sides to have a blank list again:
+                            list_three_three_sides_to_compare = []
+                        else:
+                            # remove the current three sides to have a blank list again:
+                            list_three_three_sides_to_compare = []
                     else:
                         # remove the current three sides to have a blank list again:
-                        list_three_three_sides_to_compare.pop()
-                        list_three_three_sides_to_compare.pop()
-                        list_three_three_sides_to_compare.pop()
+                        list_three_three_sides_to_compare = []
 
             # we're done the list so we need to stop the loop
             three_values_reached_list_three = True
