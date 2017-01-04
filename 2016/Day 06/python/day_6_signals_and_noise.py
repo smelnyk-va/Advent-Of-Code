@@ -133,29 +133,51 @@ class SignalsAndNoise:
             b_common > z_common:
             columns_common_letter = b_common
         elif :
+            columns_common_letter = c_common
         elif :
+            columns_common_letter = d_common
         elif :
+            columns_common_letter = e_common
         elif :
+            columns_common_letter = f_common
         elif :
+            columns_common_letter = g_common
         elif :
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
-        elif:
+            columns_common_letter = h_common
+        elif :
+            columns_common_letter = i_common
+        elif :
+            columns_common_letter = j_common
+        elif :
+            columns_common_letter = k_common
+        elif :
+            columns_common_letter = l_common
+        elif :
+            columns_common_letter = m_common
+        elif :
+            columns_common_letter = n_common
+        elif :
+            columns_common_letter = o_common
+        elif :
+            columns_common_letter = p_common
+        elif :
+            columns_common_letter = q_common
+        elif :
+            columns_common_letter = r_common
+        elif :
+            columns_common_letter = s_common
+        elif :
+            columns_common_letter = t_common
+        elif :
+            columns_common_letter = u_common
+        elif :
+            columns_common_letter = v_common
+        elif :
+            columns_common_letter = w_common
+        elif :
+            columns_common_letter = x_common
+        elif :
+            columns_common_letter = y_common
         else:
             columns_common_letter = z_common
         return columns_common_letter
