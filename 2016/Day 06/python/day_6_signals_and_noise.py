@@ -13,16 +13,20 @@ class SignalsAndNoise:
             column_1_list, column_2_list, column_3_list, column_4_list, column_5_list,
             column_6_list, column_7_list, column_8_list):
 
-        column_1_most_common = ''
-        column_2_most_common = ''
-        column_3_most_common = ''
-        column_4_most_common = ''
-        column_5_most_common = ''
-        column_6_most_common = ''
-        column_7_most_common = ''
-        column_8_most_common = ''
+        column_1_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_1_list)
+        column_2_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_2_list)
+        column_3_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_3_list)
+        column_4_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_4_list)
+        column_5_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_5_list)
+        column_6_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_6_list)
+        column_7_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_7_list)
+        column_8_most_common = SignalsAndNoise.calculate_most_common_letter_of_given_list(column_8_list)
 
-        pass
+        most_string_combined = column_1_most_common + column_2_most_common + column_3_most_common + \
+                               column_4_most_common + column_5_most_common + column_6_most_common + \
+                               column_7_most_common + column_8_most_common
+
+        return most_string_combined
 
     @staticmethod
     def calculate_most_common_letter_of_given_list(column_list):
@@ -134,11 +138,27 @@ class SignalsAndNoise:
         elif :
         elif :
         elif :
-
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        elif:
+        else:
+            columns_common_letter = z_common
         return columns_common_letter
-
-
-
 
     def day_6_signals_and_noise_part_1(self):
         input_file = open('input.txt', 'r')
@@ -178,8 +198,8 @@ class SignalsAndNoise:
 
         # once the whole input file has been separated into columns, pass it along into the
         # helper function to loop through them to get the common letter in each list
-        day_6_part_1_answer = SignalsAndNoise.\
-            calculate_most_common_letter_of_the_given_lists_and_return_answer(column_1_list,
+        day_6_part_1_answer = SignalsAndNoise. \
+            calculate_most_common_letter_of_the_given_column_return_combined_string(column_1_list,
                                                                               column_2_list,
                                                                               column_3_list,
                                                                               column_4_list,
