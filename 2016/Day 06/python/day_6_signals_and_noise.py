@@ -132,21 +132,69 @@ class SignalsAndNoise:
             b_common > v_common and b_common > w_common and b_common > x_common and b_common > y_common and \
             b_common > z_common:
             columns_common_letter = b_common
-        elif :
+        elif c_common > a_common and c_common > b_common and c_common > d_common and c_common > e_common and \
+            c_common > f_common and c_common > g_common and c_common > h_common and c_common > i_common and \
+            c_common > j_common and c_common > k_common and c_common > l_common and c_common > m_common and \
+            c_common > n_common and c_common > o_common and c_common > p_common and c_common > q_common and \
+            c_common > r_common and c_common > s_common and c_common > t_common and c_common > u_common and \
+            c_common > v_common and c_common > w_common and c_common > x_common and c_common > y_common and \
+            c_common > z_common:
             columns_common_letter = c_common
-        elif :
+        elif d_common > a_common and d_common > b_common and d_common > c_common and d_common > e_common and \
+            d_common > f_common and d_common > g_common and d_common > h_common and d_common > i_common and \
+            d_common > j_common and d_common > k_common and d_common > l_common and d_common > m_common and \
+            d_common > n_common and d_common > o_common and d_common > p_common and d_common > q_common and \
+            d_common > r_common and d_common > s_common and d_common > t_common and d_common > u_common and \
+            d_common > v_common and d_common > w_common and d_common > x_common and d_common > y_common and \
+            d_common > z_common:
             columns_common_letter = d_common
-        elif :
+        elif e_common > a_common and e_common > b_common and e_common > c_common and e_common > d_common and \
+            e_common > f_common and e_common > g_common and e_common > h_common and e_common > i_common and \
+            e_common > j_common and e_common > k_common and e_common > l_common and e_common > m_common and \
+            e_common > n_common and e_common > o_common and e_common > p_common and e_common > q_common and \
+            e_common > r_common and e_common > s_common and e_common > t_common and e_common > u_common and \
+            e_common > v_common and e_common > w_common and e_common > x_common and e_common > y_common and \
+            e_common > z_common:
             columns_common_letter = e_common
-        elif :
+        elif f_common > a_common and f_common > b_common and f_common > c_common and f_common > d_common and \
+            f_common > e_common and f_common > g_common and f_common > h_common and f_common > i_common and \
+            f_common > j_common and f_common > k_common and f_common > l_common and f_common > m_common and \
+            f_common > n_common and f_common > o_common and f_common > p_common and f_common > q_common and \
+            f_common > r_common and f_common > s_common and f_common > t_common and f_common > u_common and \
+            f_common > v_common and f_common > w_common and f_common > x_common and f_common > y_common and \
+            f_common > z_common:
             columns_common_letter = f_common
-        elif :
+        elif g_common > a_common and g_common > b_common and g_common > c_common and g_common > d_common and \
+            g_common > e_common and g_common > f_common and g_common > h_common and g_common > i_common and \
+            g_common > j_common and g_common > k_common and g_common > l_common and g_common > m_common and \
+            g_common > n_common and g_common > o_common and g_common > p_common and g_common > q_common and \
+            g_common > r_common and g_common > s_common and g_common > t_common and g_common > u_common and \
+            g_common > v_common and g_common > w_common and g_common > x_common and g_common > y_common and \
+            g_common > z_common:
             columns_common_letter = g_common
-        elif :
+        elif h_common > a_common and h_common > b_common and h_common > c_common and h_common > d_common and \
+            h_common > e_common and h_common > f_common and h_common > g_common and h_common > i_common and \
+            h_common > j_common and h_common > k_common and h_common > l_common and h_common > m_common and \
+            h_common > n_common and h_common > o_common and h_common > p_common and h_common > q_common and \
+            h_common > r_common and h_common > s_common and h_common > t_common and h_common > u_common and \
+            h_common > v_common and h_common > w_common and h_common > x_common and h_common > y_common and \
+            h_common > z_common:
             columns_common_letter = h_common
-        elif :
+        elif i_common > a_common and i_common > b_common and i_common > c_common and i_common > d_common and \
+            i_common > e_common and i_common > f_common and i_common > g_common and i_common > h_common and \
+            i_common > j_common and i_common > k_common and i_common > l_common and i_common > m_common and \
+            i_common > n_common and i_common > o_common and i_common > p_common and i_common > q_common and \
+            i_common > r_common and i_common > s_common and i_common > t_common and i_common > u_common and \
+            i_common > v_common and i_common > w_common and i_common > x_common and i_common > y_common and \
+            i_common > z_common:
             columns_common_letter = i_common
-        elif :
+        elif j_common > a_common and j_common > b_common and j_common > c_common and j_common > d_common and \
+            j_common > e_common and j_common > f_common and j_common > g_common and j_common > h_common and \
+            j_common > i_common and j_common > k_common and j_common > l_common and j_common > m_common and \
+            j_common > n_common and j_common > o_common and j_common > p_common and j_common > q_common and \
+            j_common > r_common and j_common > s_common and j_common > t_common and j_common > u_common and \
+            j_common > v_common and j_common > w_common and j_common > x_common and j_common > y_common and \
+            j_common > z_common:
             columns_common_letter = j_common
         elif :
             columns_common_letter = k_common
