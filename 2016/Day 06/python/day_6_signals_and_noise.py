@@ -370,3 +370,367 @@ class SignalsAndNoise:
                                                                               column_8_list)
         print "Day 6 Part 1 Answer: " + day_6_part_1_answer
         return day_6_part_1_answer
+
+# ========================= Part 2 ================================== #
+
+    @staticmethod
+    def calculate_least_common_letter_of_the_given_column_return_combined_string(
+            column_1_list, column_2_list, column_3_list, column_4_list, column_5_list,
+            column_6_list, column_7_list, column_8_list):
+        column_1_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_1_list)
+        column_2_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_2_list)
+        column_3_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_3_list)
+        column_4_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_4_list)
+        column_5_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_5_list)
+        column_6_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_6_list)
+        column_7_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_7_list)
+        column_8_least_common = SignalsAndNoise.calculate_least_common_letter_of_given_list(column_8_list)
+
+        original_string_combined = column_1_least_common + column_2_least_common + column_3_least_common + \
+                                   column_4_least_common + column_5_least_common + column_6_least_common + \
+                                   column_7_least_common + column_8_least_common
+
+        return original_string_combined
+
+    @staticmethod
+    def calculate_least_common_letter_of_given_list(column_list):
+
+        a_least = 0
+        b_least = 0
+        c_least = 0
+        d_least = 0
+        e_least = 0
+        f_least = 0
+        g_least = 0
+        h_least = 0
+        i_least = 0
+        j_least = 0
+        k_least = 0
+        l_least = 0
+        m_least = 0
+        n_least = 0
+        o_least = 0
+        p_least = 0
+        q_least = 0
+        r_least = 0
+        s_least = 0
+        t_least = 0
+        u_least = 0
+        v_least = 0
+        w_least = 0
+        x_least = 0
+        y_least = 0
+        z_least = 0
+
+        # sort the list first
+        column_list.sort()
+        print column_list
+
+        for letter in column_list:
+            if letter == 'a':
+                a_least += 1
+            elif letter == 'b':
+                b_least += 1
+            elif letter == 'c':
+                c_least += 1
+            elif letter == 'd':
+                d_least += 1
+            elif letter == 'e':
+                e_least += 1
+            elif letter == 'f':
+                f_least += 1
+            elif letter == 'g':
+                g_least += 1
+            elif letter == 'h':
+                h_least += 1
+            elif letter == 'i':
+                i_least += 1
+            elif letter == 'j':
+                j_least += 1
+            elif letter == 'k':
+                k_least += 1
+            elif letter == 'l':
+                l_least += 1
+            elif letter == 'm':
+                m_least += 1
+            elif letter == 'n':
+                n_least += 1
+            elif letter == 'o':
+                o_least += 1
+            elif letter == 'p':
+                p_least += 1
+            elif letter == 'q':
+                q_least += 1
+            elif letter == 'r':
+                r_least += 1
+            elif letter == 's':
+                s_least += 1
+            elif letter == 't':
+                t_least += 1
+            elif letter == 'u':
+                u_least += 1
+            elif letter == 'v':
+                v_least += 1
+            elif letter == 'w':
+                w_least += 1
+            elif letter == 'x':
+                x_least += 1
+            elif letter == 'y':
+                y_least += 1
+            elif letter == 'z':
+                z_least += 1
+
+        if a_least < b_least and a_least < c_least and a_least < d_least and a_least < e_least and \
+            a_least < f_least and a_least < g_least and a_least < h_least and a_least < i_least and \
+            a_least < j_least and a_least < k_least and a_least < l_least and a_least < m_least and \
+            a_least < n_least and a_least < o_least and a_least < p_least and a_least < q_least and \
+            a_least < r_least and a_least < s_least and a_least < t_least and a_least < u_least and \
+            a_least < v_least and a_least < w_least and a_least < x_least and a_least < y_least and \
+            a_least < z_least:
+            columns_least_common_letter = 'a'
+        elif b_least < a_least and b_least < c_least and b_least < d_least and b_least < e_least and \
+            b_least < f_least and b_least < g_least and b_least < h_least and b_least < i_least and \
+            b_least < j_least and b_least < k_least and b_least < l_least and b_least < m_least and \
+            b_least < n_least and b_least < o_least and b_least < p_least and b_least < q_least and \
+            b_least < r_least and b_least < s_least and b_least < t_least and b_least < u_least and \
+            b_least < v_least and b_least < w_least and b_least < x_least and b_least < y_least and \
+            b_least < z_least:
+            columns_least_common_letter = 'b'
+        elif c_least < a_least and c_least < b_least and c_least < d_least and c_least < e_least and \
+            c_least < f_least and c_least < g_least and c_least < h_least and c_least < i_least and \
+            c_least < j_least and c_least < k_least and c_least < l_least and c_least < m_least and \
+            c_least < n_least and c_least < o_least and c_least < p_least and c_least < q_least and \
+            c_least < r_least and c_least < s_least and c_least < t_least and c_least < u_least and \
+            c_least < v_least and c_least < w_least and c_least < x_least and c_least < y_least and \
+            c_least < z_least:
+            columns_least_common_letter = 'c'
+        elif d_least < a_least and d_least < b_least and d_least < c_least and d_least < e_least and \
+            d_least < f_least and d_least < g_least and d_least < h_least and d_least < i_least and \
+            d_least < j_least and d_least < k_least and d_least < l_least and d_least < m_least and \
+            d_least < n_least and d_least < o_least and d_least < p_least and d_least < q_least and \
+            d_least < r_least and d_least < s_least and d_least < t_least and d_least < u_least and \
+            d_least < v_least and d_least < w_least and d_least < x_least and d_least < y_least and \
+            d_least < z_least:
+            columns_least_common_letter = 'd'
+        elif e_least < a_least and e_least < b_least and e_least < c_least and e_least < d_least and \
+            e_least < f_least and e_least < g_least and e_least < h_least and e_least < i_least and \
+            e_least < j_least and e_least < k_least and e_least < l_least and e_least < m_least and \
+            e_least < n_least and e_least < o_least and e_least < p_least and e_least < q_least and \
+            e_least < r_least and e_least < s_least and e_least < t_least and e_least < u_least and \
+            e_least < v_least and e_least < w_least and e_least < x_least and e_least < y_least and \
+            e_least < z_least:
+            columns_least_common_letter = 'e'
+        elif f_least < a_least and f_least < b_least and f_least < c_least and f_least < d_least and \
+            f_least < e_least and f_least < g_least and f_least < h_least and f_least < i_least and \
+            f_least < j_least and f_least < k_least and f_least < l_least and f_least < m_least and \
+            f_least < n_least and f_least < o_least and f_least < p_least and f_least < q_least and \
+            f_least < r_least and f_least < s_least and f_least < t_least and f_least < u_least and \
+            f_least < v_least and f_least < w_least and f_least < x_least and f_least < y_least and \
+            f_least < z_least:
+            columns_least_common_letter = 'f'
+        elif g_least < a_least and g_least < b_least and g_least < c_least and g_least < d_least and \
+            g_least < e_least and g_least < f_least and g_least < h_least and g_least < i_least and \
+            g_least < j_least and g_least < k_least and g_least < l_least and g_least < m_least and \
+            g_least < n_least and g_least < o_least and g_least < p_least and g_least < q_least and \
+            g_least < r_least and g_least < s_least and g_least < t_least and g_least < u_least and \
+            g_least < v_least and g_least < w_least and g_least < x_least and g_least < y_least and \
+            g_least < z_least:
+            columns_least_common_letter = 'g'
+        elif h_least < a_least and h_least < b_least and h_least < c_least and h_least < d_least and \
+            h_least < e_least and h_least < f_least and h_least < g_least and h_least < i_least and \
+            h_least < j_least and h_least < k_least and h_least < l_least and h_least < m_least and \
+            h_least < n_least and h_least < o_least and h_least < p_least and h_least < q_least and \
+            h_least < r_least and h_least < s_least and h_least < t_least and h_least < u_least and \
+            h_least < v_least and h_least < w_least and h_least < x_least and h_least < y_least and \
+            h_least < z_least:
+            columns_least_common_letter = 'h'
+        elif i_least < a_least and i_least < b_least and i_least < c_least and i_least < d_least and \
+            i_least < e_least and i_least < f_least and i_least < g_least and i_least < h_least and \
+            i_least < j_least and i_least < k_least and i_least < l_least and i_least < m_least and \
+            i_least < n_least and i_least < o_least and i_least < p_least and i_least < q_least and \
+            i_least < r_least and i_least < s_least and i_least < t_least and i_least < u_least and \
+            i_least < v_least and i_least < w_least and i_least < x_least and i_least < y_least and \
+            i_least < z_least:
+            columns_least_common_letter = 'i'
+        elif j_least < a_least and j_least < b_least and j_least < c_least and j_least < d_least and \
+            j_least < e_least and j_least < f_least and j_least < g_least and j_least < h_least and \
+            j_least < i_least and j_least < k_least and j_least < l_least and j_least < m_least and \
+            j_least < n_least and j_least < o_least and j_least < p_least and j_least < q_least and \
+            j_least < r_least and j_least < s_least and j_least < t_least and j_least < u_least and \
+            j_least < v_least and j_least < w_least and j_least < x_least and j_least < y_least and \
+            j_least < z_least:
+            columns_least_common_letter = 'j'
+        elif k_least < a_least and k_least < b_least and k_least < c_least and k_least < d_least and \
+            k_least < e_least and k_least < f_least and k_least < g_least and k_least < h_least and \
+            k_least < i_least and k_least < j_least and k_least < l_least and k_least < m_least and \
+            k_least < n_least and k_least < o_least and k_least < p_least and k_least < q_least and \
+            k_least < r_least and k_least < s_least and k_least < t_least and k_least < u_least and \
+            k_least < v_least and k_least < w_least and k_least < x_least and k_least < y_least and \
+            k_least < z_least:
+            columns_least_common_letter = 'k'
+        elif l_least < a_least and l_least < b_least and l_least < c_least and l_least < d_least and \
+            l_least < e_least and l_least < f_least and l_least < g_least and l_least < h_least and \
+            l_least < i_least and l_least < j_least and l_least < k_least and l_least < m_least and \
+            l_least < n_least and l_least < o_least and l_least < p_least and l_least < q_least and \
+            l_least < r_least and l_least < s_least and l_least < t_least and l_least < u_least and \
+            l_least < v_least and l_least < w_least and l_least < x_least and l_least < y_least and \
+            l_least < z_least:
+            columns_least_common_letter = 'l'
+        elif m_least < a_least and m_least < b_least and m_least < c_least and m_least < d_least and \
+            m_least < e_least and m_least < f_least and m_least < g_least and m_least < h_least and \
+            m_least < i_least and m_least < j_least and m_least < k_least and m_least < l_least and \
+            m_least < n_least and m_least < o_least and m_least < p_least and m_least < q_least and \
+            m_least < r_least and m_least < s_least and m_least < t_least and m_least < u_least and \
+            m_least < v_least and m_least < w_least and m_least < x_least and m_least < y_least and \
+            m_least < z_least:
+            columns_least_common_letter = 'm'
+        elif n_least < a_least and n_least < b_least and n_least < c_least and n_least < d_least and \
+            n_least < e_least and n_least < f_least and n_least < g_least and n_least < h_least and \
+            n_least < i_least and n_least < j_least and n_least < k_least and n_least < l_least and \
+            n_least < m_least and n_least < o_least and n_least < p_least and n_least < q_least and \
+            n_least < r_least and n_least < s_least and n_least < t_least and n_least < u_least and \
+            n_least < v_least and n_least < w_least and n_least < x_least and n_least < y_least and \
+            n_least < z_least:
+            columns_least_common_letter = 'n'
+        elif o_least < a_least and o_least < b_least and o_least < c_least and o_least < d_least and \
+            o_least < e_least and o_least < f_least and o_least < g_least and o_least < h_least and \
+            o_least < i_least and o_least < j_least and o_least < k_least and o_least < l_least and \
+            o_least < m_least and o_least < n_least and o_least < p_least and o_least < q_least and \
+            o_least < r_least and o_least < s_least and o_least < t_least and o_least < u_least and \
+            o_least < v_least and o_least < w_least and o_least < x_least and o_least < y_least and \
+            o_least < z_least:
+            columns_least_common_letter = 'o'
+        elif p_least < a_least and p_least < b_least and p_least < c_least and p_least < d_least and \
+            p_least < e_least and p_least < f_least and p_least < g_least and p_least < h_least and \
+            p_least < i_least and p_least < j_least and p_least < k_least and p_least < l_least and \
+            p_least < m_least and p_least < n_least and p_least < o_least and p_least < q_least and \
+            p_least < r_least and p_least < s_least and p_least < t_least and p_least < u_least and \
+            p_least < v_least and p_least < w_least and p_least < x_least and p_least < y_least and \
+            p_least < z_least:
+            columns_least_common_letter = 'p'
+        elif q_least < a_least and q_least < b_least and q_least < c_least and q_least < d_least and \
+            q_least < e_least and q_least < f_least and q_least < g_least and q_least < h_least and \
+            q_least < i_least and q_least < j_least and q_least < k_least and q_least < l_least and \
+            q_least < m_least and q_least < n_least and q_least < o_least and q_least < p_least and \
+            q_least < r_least and q_least < s_least and q_least < t_least and q_least < u_least and \
+            q_least < v_least and q_least < w_least and q_least < x_least and q_least < y_least and \
+            q_least < z_least:
+            columns_least_common_letter = 'q'
+        elif r_least < a_least and r_least < b_least and r_least < c_least and r_least < d_least and \
+            r_least < e_least and r_least < f_least and r_least < g_least and r_least < h_least and \
+            r_least < i_least and r_least < j_least and r_least < k_least and r_least < l_least and \
+            r_least < m_least and r_least < n_least and r_least < o_least and r_least < p_least and \
+            r_least < q_least and r_least < s_least and r_least < t_least and r_least < u_least and \
+            r_least < v_least and r_least < w_least and r_least < x_least and r_least < y_least and \
+            r_least < z_least:
+            columns_least_common_letter = 'r'
+        elif s_least < a_least and s_least < b_least and s_least < c_least and s_least < d_least and \
+            s_least < e_least and s_least < f_least and s_least < g_least and s_least < h_least and \
+            s_least < i_least and s_least < j_least and s_least < k_least and s_least < l_least and \
+            s_least < m_least and s_least < n_least and s_least < o_least and s_least < p_least and \
+            s_least < q_least and s_least < r_least and s_least < t_least and s_least < u_least and \
+            s_least < v_least and s_least < w_least and s_least < x_least and s_least < y_least and \
+            s_least < z_least:
+            columns_least_common_letter = 's'
+        elif t_least < a_least and t_least < b_least and t_least < c_least and t_least < d_least and \
+            t_least < e_least and t_least < f_least and t_least < g_least and t_least < h_least and \
+            t_least < i_least and t_least < j_least and t_least < k_least and t_least < l_least and \
+            t_least < m_least and t_least < n_least and t_least < o_least and t_least < p_least and \
+            t_least < q_least and t_least < r_least and t_least < s_least and t_least < u_least and \
+            t_least < v_least and t_least < w_least and t_least < x_least and t_least < y_least and \
+            t_least < z_least:
+            columns_least_common_letter = 't'
+        elif u_least < a_least and u_least < b_least and u_least < c_least and u_least < d_least and \
+            u_least < e_least and u_least < f_least and u_least < g_least and u_least < h_least and \
+            u_least < i_least and u_least < j_least and u_least < k_least and u_least < l_least and \
+            u_least < m_least and u_least < n_least and u_least < o_least and u_least < p_least and \
+            u_least < q_least and u_least < r_least and u_least < s_least and u_least < t_least and \
+            u_least < v_least and u_least < w_least and u_least < x_least and u_least < y_least and \
+            u_least < z_least:
+            columns_least_common_letter = 'u'
+        elif v_least < a_least and v_least < b_least and v_least < c_least and v_least < d_least and \
+            v_least < e_least and v_least < f_least and v_least < g_least and v_least < h_least and \
+            v_least < i_least and v_least < j_least and v_least < k_least and v_least < l_least and \
+            v_least < m_least and v_least < n_least and v_least < o_least and v_least < p_least and \
+            v_least < q_least and v_least < r_least and v_least < s_least and v_least < t_least and \
+            v_least < u_least and v_least < w_least and v_least < x_least and v_least < y_least and \
+            v_least < z_least:
+            columns_least_common_letter = 'v'
+        elif w_least < a_least and w_least < b_least and w_least < c_least and w_least < d_least and \
+            w_least < e_least and w_least < f_least and w_least < g_least and w_least < h_least and \
+            w_least < i_least and w_least < j_least and w_least < k_least and w_least < l_least and \
+            w_least < m_least and w_least < n_least and w_least < o_least and w_least < p_least and \
+            w_least < q_least and w_least < r_least and w_least < s_least and w_least < t_least and \
+            w_least < u_least and w_least < v_least and w_least < x_least and w_least < y_least and \
+            w_least < z_least:
+            columns_least_common_letter = 'w'
+        elif x_least < a_least and x_least < b_least and x_least < c_least and x_least < d_least and \
+            x_least < e_least and x_least < f_least and x_least < g_least and x_least < h_least and \
+            x_least < i_least and x_least < j_least and x_least < k_least and x_least < l_least and \
+            x_least < m_least and x_least < n_least and x_least < o_least and x_least < p_least and \
+            x_least < q_least and x_least < r_least and x_least < s_least and x_least < t_least and \
+            x_least < u_least and x_least < v_least and x_least < w_least and x_least < y_least and \
+            x_least < z_least:
+            columns_least_common_letter = 'x'
+        elif y_least < a_least and y_least < b_least and y_least < c_least and y_least < d_least and \
+            y_least < e_least and y_least < f_least and y_least < g_least and y_least < h_least and \
+            y_least < i_least and y_least < j_least and y_least < k_least and y_least < l_least and \
+            y_least < m_least and y_least < n_least and y_least < o_least and y_least < p_least and \
+            y_least < q_least and y_least < r_least and y_least < s_least and y_least < t_least and \
+            y_least < u_least and y_least < v_least and y_least < w_least and y_least < x_least and \
+            y_least < z_least:
+            columns_least_common_letter = 'y'
+        else:
+            columns_least_common_letter = 'z'
+        return columns_least_common_letter
+
+    @staticmethod
+    def day_6_signals_and_noise_part_2():
+        input_file = open('../input.txt', 'r')
+
+        column_1_list = []
+        column_2_list = []
+        column_3_list = []
+        column_4_list = []
+        column_5_list = []
+        column_6_list = []
+        column_7_list = []
+        column_8_list = []
+
+        LETTERS_IN_LINE_MATCHER = r'(\w)(\w)(\w)(\w)(\w)(\w)(\w)(\w)'
+
+        for line in input_file:
+            # for each passed in line, get the 8 letters via regex
+            found_letters_string = re.search(LETTERS_IN_LINE_MATCHER, line)
+            first_letter = found_letters_string.group(1)
+            second_letter = found_letters_string.group(2)
+            third_letter = found_letters_string.group(3)
+            fourth_letter = found_letters_string.group(4)
+            fifth_letter = found_letters_string.group(5)
+            sixth_letter = found_letters_string.group(6)
+            seventh_letter = found_letters_string.group(7)
+            eigth_letter = found_letters_string.group(8)
+
+            # add each letter to it's corresponding list
+            column_1_list.append(first_letter)
+            column_2_list.append(second_letter)
+            column_3_list.append(third_letter)
+            column_4_list.append(fourth_letter)
+            column_5_list.append(fifth_letter)
+            column_6_list.append(sixth_letter)
+            column_7_list.append(seventh_letter)
+            column_8_list.append(eigth_letter)
+
+        # once the whole input file has been separated into columns, pass it along into the
+        # helper function to loop through them to get the common letter in each list
+        day_6_part_2_answer = SignalsAndNoise. \
+            calculate_least_common_letter_of_the_given_column_return_combined_string(column_1_list,
+                                                                              column_2_list,
+                                                                              column_3_list,
+                                                                              column_4_list,
+                                                                              column_5_list,
+                                                                              column_6_list,
+                                                                              column_7_list,
+                                                                              column_8_list)
+        print "Day 6 Part 2 Answer: " + day_6_part_2_answer
+        return day_6_part_2_answer
