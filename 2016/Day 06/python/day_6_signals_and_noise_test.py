@@ -11,5 +11,12 @@ class SignalsAndNoisePart1Tests(unittest.TestCase):
 
     def test_calculate_most_common_letter_of_given_list_returns_a_for_a_list_with_three_s_it(self):
         expected = 'a'
-        actual = SignalsAndNoise.calculate_most_common_letter_of_given_list(['a', 'a', 'a', 'b', 'c'])
+        letter_list = ['a', 'a', 'a', 'b', 'c']
+        actual = SignalsAndNoise.calculate_most_common_letter_of_given_list(letter_list)
+        self.assertEquals(expected, actual)
+
+    def test_calculate_most_common_letter_of_given_list_returns_a_for_a_list_with_three_s_it(self):
+        expected = 'a'
+        letter_list = ['a', 'c']
+        actual = SignalsAndNoise.calculate_most_common_letter_of_given_list(letter_list)
         self.assertEquals(expected, actual)
