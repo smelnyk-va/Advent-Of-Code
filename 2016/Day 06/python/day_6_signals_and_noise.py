@@ -322,7 +322,7 @@ class SignalsAndNoise:
 
     @staticmethod
     def day_6_signals_and_noise_part_1():
-        input_file = open('input.txt', 'r')
+        input_file = open('../input.txt', 'r')
 
         column_1_list = []
         column_2_list = []
